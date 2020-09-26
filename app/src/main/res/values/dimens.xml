@@ -1,3 +1,4 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="phoneNum">(651) 644-8887</dimen>
 </resources>

@@ -9,4 +9,16 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="country_fried_steak_and_egg">Country Fried Steak and Egg, 13.5</string>
+    <string name="matches">Matches</string>
+    <string name="CFSE_description">authentic country fried steak and egg</string>
+    <string name="home_button">home button</string>
+    <string name="distance">0.5 miles away</string>
+    <string name="location">location</string>
+    <string name="AvailableAt">Available at:</string>
+    <string name="RestaurantName">The Neighbourhood Cafe</string>
+    <string name="hours">6:30AM-9PM(Sun-Fri)</string>
+    <string name="website">http://www.theneighborhoodcafemn.com/</string>
+    <string name="phoneNum">(651) 644-8887</string>
+    <string name="dine_in">dine in/take out info</string>
 </resources>
