@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8DDDD"
-    android:visibility="visible">
+    android:visibility="visible"
+    tools:context=".FoodProfile">
+
 
     <TextView
         android:id="@+id/dishname"

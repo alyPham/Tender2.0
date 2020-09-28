@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Tender"
+rootProject.name = "tender_screen"
