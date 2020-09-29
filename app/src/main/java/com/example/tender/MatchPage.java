@@ -1,14 +1,14 @@
 package com.example.tender;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SwipeUp extends AppCompatActivity {
+import android.os.Bundle;
+
+public class MatchPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.more_info);
+        setContentView(R.layout.activity_match_page);
     }
 }
