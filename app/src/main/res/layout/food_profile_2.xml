@@ -51,7 +51,7 @@
         android:layout_width="273dp"
         android:layout_height="62dp"
         android:layout_marginTop="544dp"
-        android:text="@string/ChickenShawarmades"
+        android:text="@string/ChickenShawarmaDescription"
         android:textColor="#9C7C7C"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

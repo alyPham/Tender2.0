@@ -22,7 +22,7 @@
     <string name="phoneNum">(651) 644-8887</string>
     <string name="dine_in">dine in/take out info</string>
     <string name="ChickenShawarma">chicken shawarma, 7.95</string>
-    <string name="ChickenShawarmades">pita never warmed me enough. Looking for additional flavor in my plain life</string>
+    <string name="ChickenShawarmaDescription">pita never warmed me enough. Looking for additional flavor in my plain life</string>
     <string name="SwipeUp">more info</string>
     <string name="lessinfo">less info</string>
     <string name="matchpagetext">You\'ve paired with a dish!</string>
