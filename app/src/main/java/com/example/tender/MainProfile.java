@@ -1,13 +1,12 @@
 package com.example.tender;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,17 +17,20 @@ public class MainProfile extends AppCompatActivity {
     float x1, x2, y1, y2;
 
     ImageView dishImageView;
-    TextView nameTextView;
-    TextView dishDescriptionView;
-    TextView distanceView;
+    TextView nameTextView, dishDescriptionView, distanceView;
 
     List<Dish> dishList;
     DishManager dishManager;
     Map<String, ArrayList<String>> dishMap;
 
+//    Dish dish;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        databaseReference = FirebaseDatabase.getInstance().getReference().child("Dish");
+
 
         setContentView(R.layout.food_profile);
 
@@ -41,12 +43,14 @@ public class MainProfile extends AppCompatActivity {
         dishManager = new DishManager();
         dishMap = new HashMap<>();
 
-        initializeDishList();
-        initializeDefaultProfilePage();
+        setProfile(dishManager.generateSingleDishObject());
+//        initializeDishList();
+//        initializeDefaultProfilePage();
     }
 
 
     // Test only
+
 
     /**
      * Sets up this page with the information from the dish object
@@ -67,18 +71,18 @@ public class MainProfile extends AppCompatActivity {
     //      generates lists in random orders.
     public void initializeDishList() {
         // hardcoded for now but will be changed into random auto-generated lists
-        dishList.add(new Dish(R.drawable.countryfriedsteak,
-                R.string.country_fried_steak_and_egg,
-                R.string.CFSE_description,
-                R.string.distance,
-                new Restaurant()));
-
-        dishList.add(new Dish(R.drawable.chicken_shawarma,
-                R.string.ChickenShawarma,
-                R.string.ChickenShawarmaDescription,
-                R.string.distance,
-                new Restaurant())
-        );
+//        dishList.add(new Dish(R.drawable.countryfriedsteak,
+//                R.string.country_fried_steak_and_egg,
+//                R.string.CFSE_description,
+//                R.string.distance,
+//                new Restaurant()));
+//
+//        dishList.add(new Dish(R.drawable.chickenshawarma,
+//                R.string.ChickenShawarma,
+//                R.string.ChickenShawarmaDescription,
+//                R.string.distance,
+//                new Restaurant())
+//        );
     }
 
     /**

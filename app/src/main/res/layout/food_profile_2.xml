@@ -30,7 +30,7 @@
         android:contentDescription="@string/country_fried_steak_and_egg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chicken_shawarma" />
+        app:srcCompat="@drawable/chickenshawarma" />
 
     <ImageButton
         android:id="@+id/matchbutton"
