@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.common.base.Function;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -42,7 +43,7 @@ public class DishManager {
         return i;
     }
 
-    public List<Dish> getDishes(){
+    public void getDishes(final Function<List<Dish>, Void> function){
 
         db.collection("dish").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -58,10 +59,10 @@ public class DishManager {
                     dish.setDistance(snapshot.get("distance").toString());
                     dishes.add(dish);
                     System.out.println("----------new dish added: \n" + dishes);
+                    function.apply(dishes);
                 }
             }
         });
-        return dishes;
     }
 
     public void setDishImage(final Dish dish, StorageReference storageReference) throws IOException {

@@ -39,7 +39,7 @@
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintStart_toEndOf="@+id/BackToMain"
         app:srcCompat="@drawable/matchicon" />
 
     <TextView
@@ -92,7 +92,7 @@
         />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/BackToMain"
         android:layout_width="147dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"

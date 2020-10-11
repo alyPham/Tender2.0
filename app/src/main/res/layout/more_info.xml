@@ -102,51 +102,43 @@
         app:layout_constraintTop_toBottomOf="@+id/dineInText" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="105dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:id="@+id/homebutton"
+        android:layout_width="81dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="32dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/home_button"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNum"
-        app:srcCompat="@drawable/homebuttonicon" />
+        app:srcCompat="@drawable/home_icon" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="94dp"
-        android:layout_height="87dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:id="@+id/matchbutton"
+        android:layout_width="92dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="16dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/matches"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNum"
-        app:srcCompat="@drawable/matchbutton" />
-
-    <ImageView
-        android:layout_width="76dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginBottom="18dp"
+        android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/swipedownicon" />
+        app:layout_constraintStart_toEndOf="@+id/BackToMain"
+        app:srcCompat="@drawable/matchicon" />
 
-    <TextView
-        android:id="@+id/lessInfoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginLeft="165dp"
-        android:layout_marginBottom="7dp"
-        android:text="@string/lessinfo"
+    <ImageButton
+        android:id="@+id/BackToMain"
+        android:layout_width="147dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/homebutton"
+        app:srcCompat="@drawable/back_to_main_icon" />
 
     <TextView
         android:id="@+id/dineInText"

@@ -1,17 +1,33 @@
 package com.example.tender;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MoreInfo extends AppCompatActivity {
+    ImageButton backToMain;
+    Restaurant currentRestaurant;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.more_info);
+
+        backToMain = findViewById(R.id.BackToMain);
+
+        backToMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MoreInfo.this, MainProfile.class);
+                startActivity(i);
+            }
+        });
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {
