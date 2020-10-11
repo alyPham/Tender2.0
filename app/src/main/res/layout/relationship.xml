@@ -43,7 +43,7 @@
         android:fontFamily="@font/roboto_bold"
         android:text="What kind of match are you pursuing?"
         android:textColor="#BF575656"
-        android:textSize="20"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.39"

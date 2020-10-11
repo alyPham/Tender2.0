@@ -1,41 +1,46 @@
 package com.example.tender;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+
+import io.grpc.internal.JsonUtil;
 
 public class DishManager {
     final long ONE_MEGABYTE = 1024*1024;
     FirebaseFirestore db;
+    private CollectionReference dishRef;
+    private List<String> dishes;
     StorageReference storageReference;
     DatabaseReference databaseReference;
 
     public DishManager(){
         db = FirebaseFirestore.getInstance();
+        dishRef = db.collection("dish");
         storageReference = FirebaseStorage.getInstance().getReference().child("test_alex");
         databaseReference = FirebaseDatabase.getInstance("https://tender2-74c0e.firebaseio.com/").
                 getReference().child("Dish");
+
+        dishes = new ArrayList<>();
     };
 
 
@@ -46,15 +51,17 @@ public class DishManager {
         return i;
     }
 
-    public List<QueryDocumentSnapshot> getDishes(){
-        final CollectionReference ref = db.collection("dish");
-        ref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+    public List<String> getDishes(){
+        db.collection("dish").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                DocumentSnapshot
+            public void onEvent(QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                for (DocumentSnapshot snapshot:value){
+                    dishes.add(snapshot.getString("name"));
+                }
             }
         });
-        return null;
+        System.out.println(dishes);
+        return dishes;
     }
 
 //    public Dish setDishText(final Dish dish, FirebaseFirestore db){

@@ -43,7 +43,10 @@ public class MainProfile extends AppCompatActivity {
         dishManager = new DishManager();
         dishMap = new HashMap<>();
 
-        setProfile(dishManager.generateSingleDishObject());
+        System.out.println("--------------------The list that dishmanager generates is : " +
+                "\n --------------------" + dishManager.getDishes());
+
+//        setProfile(dishManager.getDishes().get(0));
 //        initializeDishList();
 //        initializeDefaultProfilePage();
     }
