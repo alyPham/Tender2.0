@@ -1,6 +1,9 @@
 package com.example.tender;
 
-public class Dish {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Dish implements Parcelable {
     private Integer ImgID;
     private String name;
     private String description;
@@ -24,6 +27,28 @@ public class Dish {
     }
 
 
+    protected Dish(Parcel in) {
+        if (in.readByte() == 0) {
+            ImgID = null;
+        } else {
+            ImgID = in.readInt();
+        }
+        name = in.readString();
+        description = in.readString();
+        distance = in.readString();
+    }
+
+    public static final Creator<Dish> CREATOR = new Creator<Dish>() {
+        @Override
+        public Dish createFromParcel(Parcel in) {
+            return new Dish(in);
+        }
+
+        @Override
+        public Dish[] newArray(int size) {
+            return new Dish[size];
+        }
+    };
 
     public void setImgID(int ImgID){
         this.ImgID = ImgID;
@@ -59,5 +84,23 @@ public class Dish {
 
     public Restaurant getRestaurant(){
         return restaurant;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (ImgID == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(ImgID);
+        }
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeString(distance);
     }
 }

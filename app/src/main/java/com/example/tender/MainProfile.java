@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,7 +50,7 @@ public class MainProfile extends AppCompatActivity {
         setContentView(R.layout.food_profile);
 
         moreInfo = findViewById(R.id.BackToMain);
-        moreInfo.setOnClickListener(new View.OnClickListener(){
+        moreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainProfile.this, MoreInfo.class);
@@ -105,7 +106,7 @@ public class MainProfile extends AppCompatActivity {
     }
 
     public void initializeHardCodeDishNRest() {
-        indochin =new Restaurant(
+        indochin = new Restaurant(
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantName),
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantHours),
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantDineIn),
@@ -221,7 +222,7 @@ public class MainProfile extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if (Math.abs(x1 - x2)>30) {
+                if (Math.abs(x1 - x2) > 30) {
                     System.out.println("swipe detected");
                     if (x1 > x2) { // swiping left
                         dislikeCurrentDish();
@@ -240,13 +241,16 @@ public class MainProfile extends AppCompatActivity {
      * and load a new dish to display
      */
     public void dislikeCurrentDish() {
-        swipeLeftDishes.add(currentDish);
-        dishListTemp.remove(currentDish);
-        setProfile(dishListTemp.get(0));
-        System.out.println("--------------------------------Current dish disliked, swiping left");
-        System.out.println("----------------------------Original dish list " + dishListTemp);
-        System.out.println("----------------------------liked dish list " + likedDishes);
-        System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
+
+        if (dishListTemp.size() > 0) {
+            swipeLeftDishes.add(currentDish);
+            dishListTemp.remove(currentDish);
+            setProfile(dishListTemp.get(0));
+            System.out.println("--------------------------------Current dish disliked, swiping left");
+            System.out.println("----------------------------Original dish list " + dishListTemp);
+            System.out.println("----------------------------liked dish list " + likedDishes);
+            System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
+        }
     }
 
     /**
@@ -256,15 +260,20 @@ public class MainProfile extends AppCompatActivity {
      */
     public void likeCurrentDish() {
 
-        likedDishes.add(currentDish);
-        dishListTemp.remove(currentDish);
-        setProfile(dishListTemp.get(0));
-        System.out.println("--------------------------------Current dish liked, swiping right");
-        System.out.println("----------------------------Original dish list " + dishListTemp);
-        System.out.println("----------------------------liked dish list " + likedDishes);
-        System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
-        Intent i = new Intent(MainProfile.this, MatchPage.class);
+        if (dishListTemp.size() > 0) {
+            likedDishes.add(currentDish);
+            dishListTemp.remove(currentDish);
+            setProfile(dishListTemp.get(0));
 
+            System.out.println("--------------------------------Current dish liked, swiping right");
+            System.out.println("----------------------------Original dish list " + dishListTemp);
+            System.out.println("----------------------------liked dish list " + likedDishes);
+            System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
+        }
+
+        Intent i = new Intent(MainProfile.this, MatchDisplay.class);
+        i.putExtra("matched_dish", currentDish);
+//        j.putExtra()
         //TODO: set up new MatchPage UI & Match List page
         startActivity(i);
 
@@ -275,7 +284,7 @@ public class MainProfile extends AppCompatActivity {
         return getString(ID);
     }
 
-    public Dish getCurrentDish(){
+    public Dish getCurrentDish() {
         return currentDish;
     }
 }
