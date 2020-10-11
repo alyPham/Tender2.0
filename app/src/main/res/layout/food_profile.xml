@@ -32,17 +32,15 @@
 
     <ImageButton
         android:id="@+id/matchbutton"
-        android:layout_width="126dp"
-        android:layout_height="117dp"
-        android:layout_marginStart="232dp"
-        android:layout_marginLeft="232dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="92dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="16dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/matchbutton" />
+        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:srcCompat="@drawable/matchicon" />
 
     <TextView
         android:id="@+id/dishdescription"
@@ -58,17 +56,17 @@
 
     <ImageButton
         android:id="@+id/homebutton"
-        android:layout_width="141dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="81dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="32dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/home_button"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/homebuttonicon" />
+        app:srcCompat="@drawable/home_icon" />
 
     <ImageView
         android:id="@+id/location"
@@ -93,26 +91,17 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
-        android:layout_marginLeft="170dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/SwipeUp"
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="147dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginLeft="175dp"
-        android:layout_marginBottom="25dp"
-        android:src="@drawable/swipeupicon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/homebutton"
+        app:srcCompat="@drawable/more_info_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
