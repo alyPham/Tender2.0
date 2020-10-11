@@ -1,29 +1,77 @@
 <resources>
     <string name="app_name">Tender</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="country_fried_steak_and_egg">Country Fried Steak and Egg, 13.5</string>
     <string name="matches">Matches</string>
-    <string name="CFSE_description">authentic country fried steak and egg</string>
     <string name="home_button">home button</string>
-    <string name="distance">0.5 miles away</string>
+    <string name="SwipeUp">more info</string>
+    <string name="LessInfo">less info</string>
+    <string name="MatchPageText">You\'ve paired with a dish!</string>
     <string name="location">location</string>
     <string name="AvailableAt">Available at:</string>
-    <string name="RestaurantName">The Neighbourhood Cafe</string>
-    <string name="hours">6:30AM-9PM(Sun-Fri)</string>
-    <string name="website">http://www.theneighborhoodcafemn.com/</string>
-    <string name="phoneNum">(651) 644-8887</string>
-    <string name="dine_in">dine in/take out info</string>
-    <string name="ChickenShawarma">chicken shawarma, 7.95</string>
-    <string name="ChickenShawarmaDescription">pita never warmed me enough. Looking for additional flavor in my plain life</string>
-    <string name="SwipeUp">more info</string>
-    <string name="lessinfo">less info</string>
-    <string name="matchpagetext">You\'ve paired with a dish!</string>
+
+    <!-- Strings used for dishes -->
+    <string name="rareBeefPhoName">Rare Beef Pho, 8.95</string>
+    <string name="rareBeefPhoDescription">Any time, any place, always down to pho</string>
+    <string name="rareBeefPhoDistance">0.5 mi</string>
+
+    <string name="indochinVietnameseRestaurantName">Indochin Vietnamese Restaurant</string>
+    <string name="indochinVietnameseRestaurantHours">(R-T) 11am - 9pm</string>
+    <string name="indochinVietnameseRestaurantDineIn">Yes</string>
+    <string name="indochinVietnameseRestaurantTakeout">Yes</string>
+    <string name="indochinVietnameseRestaurantDelivery">No</string>
+    <string name="indochinVietnameseRestaurantWebsite">indochingrandave.squarespace.com</string>
+    <string name="indochinVietnameseRestaurantPhoneNum">(651)–690–2728</string>
+
+
+    <string name="theCaliforniaName">The California, 10.95</string>
+    <string name="theCaliforniaDescription">Don\'t make me wait, it\'s bacon me crazy</string>
+    <string name="theCaliforniaDistance">0.2 mi</string>
+
+    <string name="myBurgerName">My Burger</string>
+    <string name="myBurgerHours">(M-U) 11am - 10pm</string>
+    <string name="myBurgerDineIn">Yes</string>
+    <string name="myBurgerTakeout">Yes</string>
+    <string name="myBurgerDelivery">Yes</string>
+    <string name="myBurgerWebsite">myburgerusa.com</string>
+    <string name="myBurgerPhoneNum">(651)–330–7816</string>
+
+
+
+    <string name="theHealingPlateName">The Healing Plate</string>
+    <string name="seafoodBoilName">Seafood Boil</string>
+
+
+
+    <string name="countryFriedSteakAndEggsName">Country Fried Steak and Egg, 13.5</string>
+    <string name="countryFriedSteakAndEggsDescription">authentic country fried steak and egg</string>
+    <string name="countryFriedSteakAndEggsDistance">0.5 miles away</string>
+
+    <string name="NCname">The Neighborhood Cafe</string>
+    <string name="theNeighborhoodCafeHours">6:30AM-9PM(Sun-Fri)</string>
+    <string name="theNeighborhoodCafeWebsite">http://www.theneighborhoodcafemn.com/</string>
+    <string name="theNeighborhoodCafePhoneNum">(651)644–8887</string>
+    <string name="theNeighborhoodCafeDineIn">No</string>
+    <string name="theNeighborhoodCafeTakeout">yes</string>
+    <string name="theNeighborhoodCafeDelivery">No</string>
+
+
+
+    <string name="chickenShawarmaName">chicken shawarma, 7.95</string>
+    <string name="chickenShawarmaDescription">pita never warmed me enough.
+        Looking for additional flavor in my plain life</string>
+    <string name="chickenShawarmaDistance">0.2 mi</string>
+
+    <string name="ShishMediterraneanRestaurantName">Shish Mediterranean Restaurant</string>
+    <string name="ShishMediterraneanRestaurantHours">(M-S) 8am - 9pm</string>
+    <string name="ShishMediterraneanRestaurantDineIn">Yes</string>
+    <string name="ShishMediterraneanRestaurantTakeout">Yes</string>
+    <string name="ShishMediterraneanRestaurantDelivery">Yes</string>
+    <string name="ShishMediterraneanRestaurantWebsite">https://www.shishongrand.com/</string>
+    <string name="ShishMediterraneanRestaurantPhoneNum">(651)–690–2212</string>
+    <string name="lessinfo">Less Info</string>
+    <string name="dineIn">"Dine In: "</string>
+    <string name="Takeout">Take out: </string>
+    <string name="Delivery">delivery: </string>
+
+
 </resources>

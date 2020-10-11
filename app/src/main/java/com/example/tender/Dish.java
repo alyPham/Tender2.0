@@ -23,6 +23,8 @@ public class Dish {
         this.restaurant = restaurant;
     }
 
+
+
     public void setImgID(int ImgID){
         this.ImgID = ImgID;
     }

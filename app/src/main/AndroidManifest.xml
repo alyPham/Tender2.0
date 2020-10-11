@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MoreInfo" />
-        <activity android:name=".SwipeLeft" />
         <activity android:name=".MainProfile" />
 
         <meta-data

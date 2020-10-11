@@ -10,7 +10,6 @@ public class MainProfileTest {
 
     @Test
     public void initializeDishList() {
-        MainProfile mainProfile = new MainProfile();
-        mainProfile.initializeDishList();
+
     }
 }

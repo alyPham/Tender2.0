@@ -7,16 +7,16 @@
     android:background="#FFF0D6">
 
     <TextView
-        android:id="@+id/distance2"
+        android:id="@+id/distance_moreinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="480dp"
-        android:text="@string/distance"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/distance" />
+        tools:text="" />
 
     <ImageView
         android:id="@+id/location2"
@@ -31,29 +31,28 @@
         app:srcCompat="@drawable/locationicon" />
 
     <TextView
-        android:id="@+id/dishname2"
+        android:id="@+id/dishname_moreinfo"
         android:layout_width="379dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="452dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="@string/country_fried_steak_and_egg"
+        android:text=""
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/dishImage_moreInfo"
         android:layout_width="370dp"
         android:layout_height="442dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:contentDescription="@string/country_fried_steak_and_egg"
+        android:contentDescription=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/countryfriedsteak" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -67,13 +66,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/restaurantname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="520dp"
-        android:text="@string/RestaurantName"
+        android:text=""
         android:textColor="#6A6666"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -81,67 +80,54 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="550dp"
-        android:text="@string/hours"
+        android:layout_marginTop="5dp"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/website"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="590dp"
-        android:text="@string/website"
+        android:layout_marginTop="6dp"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="298dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="560dp"
-        android:contentDescription="@string/dine_in"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dine_in" />
+        app:layout_constraintTop_toBottomOf="@+id/dineInText" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="105dp"
         android:layout_height="91dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/home_button"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNum"
         app:srcCompat="@drawable/homebuttonicon" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="94dp"
         android:layout_height="87dp"
-        android:layout_marginTop="608dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/matches"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNum"
         app:srcCompat="@drawable/matchbutton" />
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="76dp"
         android:layout_height="43dp"
         android:layout_marginStart="155dp"
@@ -152,7 +138,7 @@
         app:srcCompat="@drawable/swipedownicon" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/lessInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="165dp"
@@ -161,5 +147,76 @@
         android:text="@string/lessinfo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dineInText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="29dp"
+        android:width="50sp"
+        android:text="@string/dineIn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/takeOutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="29dp"
+        android:text="@string/Takeout"
+        app:layout_constraintStart_toEndOf="@+id/dineInOption"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/DeliveryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="29dp"
+        android:text="@string/Delivery"
+        app:layout_constraintStart_toEndOf="@+id/takeOutOption"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/takeOutOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:width="23sp"
+        app:layout_constraintStart_toEndOf="@+id/takeOutText"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/deliveryOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:width="23sp"
+        app:layout_constraintStart_toEndOf="@+id/DeliveryText"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/dineInOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:width="23sp"
+        app:layout_constraintStart_toEndOf="@+id/dineInText"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/phoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/website" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
