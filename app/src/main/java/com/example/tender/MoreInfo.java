@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,14 +15,28 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MoreInfo extends AppCompatActivity {
     ImageButton backToMain;
     Restaurant currentRestaurant;
+    Dish currentDish;
+    ImageView dishImage;
+    TextView distance,
+            dishName,
+            restaurantName,
+            hours,
+            website,
+            dineIn,
+            takeOut,
+            delivery,
+            phoneNum;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.more_info);
 
-        backToMain = findViewById(R.id.BackToMain);
+        currentRestaurant = getIntent().getParcelableExtra("currentRestaurant");
+        currentDish = getIntent().getParcelableExtra("currentDish");
 
+        backToMain = findViewById(R.id.BackToMain);
         backToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,23 +44,31 @@ public class MoreInfo extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        System.out.println(currentRestaurant.getDistance());
+
+        dishImage = findViewById(R.id.dishImage_moreInfo);
+        distance = findViewById(R.id.distance_moreinfo);
+        dishName = findViewById(R.id.dishname_moreinfo);
+        restaurantName = findViewById(R.id.restaurantname);
+        hours = findViewById(R.id.hours);
+        website = findViewById(R.id.website);
+        dineIn = findViewById(R.id.dineInOption);
+        takeOut = findViewById(R.id.takeOutOption);
+        delivery = findViewById(R.id.deliveryOption);
+        phoneNum = findViewById(R.id.phoneNum);
+        displayRestaurantInfo();
     }
 
-    public boolean onTouchEvent(MotionEvent touchEvent) {
-        float y1 = 0,y2;
-        switch (touchEvent.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                y1 = touchEvent.getY();
-                break;
-            case MotionEvent.ACTION_UP:
-                y2 = touchEvent.getY();
-                if (y1 < y2) { // swipe down
-                    Intent i = new Intent(MoreInfo.this, MainProfile.class);
-                    startActivity(i);
-                    return false;
-                }
-                break;
-        }
-        return false;
+    public void displayRestaurantInfo(){
+        dishImage.setImageResource(currentDish.getImgID());
+        distance.setText(currentRestaurant.getDistance());
+        dishName.setText(currentDish.getName());
+        restaurantName.setText(currentRestaurant.getName());
+        hours.setText(currentRestaurant.getDaysAndHours());
+        website.setText(currentRestaurant.getWebsite());
+        dineIn.setText(currentRestaurant.getDineIn());
+        takeOut.setText(currentRestaurant.getTakeOut());
+        delivery.setText(currentRestaurant.getDelivery());
+        phoneNum.setText(currentRestaurant.getPhoneNum());
     }
 }

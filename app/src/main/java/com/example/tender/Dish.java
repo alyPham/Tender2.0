@@ -11,7 +11,7 @@ public class Dish implements Parcelable {
     private Restaurant restaurant;
 
     public Dish(){
-        ImgID = R.drawable.countryfriedsteak;
+        ImgID = R.drawable.default_dish_image;
         name = "default name";
         description = "default description";
         distance = "default distance";

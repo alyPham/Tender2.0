@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +33,7 @@ public class MainProfile extends AppCompatActivity {
     DishManager dishManager;
     Map<String, ArrayList<String>> dishMap;
     Dish currentDish;
-    Dish currentRestaurant;
+    Restaurant currentRestaurant;
 
     Restaurant theNeighborhoodCafe;
     Restaurant shish;
@@ -53,10 +52,11 @@ public class MainProfile extends AppCompatActivity {
         moreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(currentRestaurant.getDistance());
                 Intent i = new Intent(MainProfile.this, MoreInfo.class);
-                Intent j = new Intent(getApplicationContext(), MoreInfo.class);
+                i.putExtra("currentDish", currentDish);
+                i.putExtra("currentRestaurant", currentRestaurant);
                 startActivity(i);
-//                j.putExtra()
             }
 
         });
@@ -107,13 +107,14 @@ public class MainProfile extends AppCompatActivity {
 
     public void initializeHardCodeDishNRest() {
         indochin = new Restaurant(
-                convertStrIdtoString(R.string.indochinVietnameseRestaurantName),
-                convertStrIdtoString(R.string.indochinVietnameseRestaurantHours),
+                getString(R.string.indochinVietnameseRestaurantName),
+                getString(R.string.indochinVietnameseRestaurantHours),
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantDineIn),
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantTakeout),
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantDelivery),
                 convertStrIdtoString(R.string.indochinVietnameseRestaurantWebsite),
-                convertStrIdtoString(R.string.indochinVietnameseRestaurantPhoneNum)
+                convertStrIdtoString(R.string.indochinVietnameseRestaurantPhoneNum),
+                getString(R.string.indochine_distance)
         );
         theNeighborhoodCafe = new Restaurant(
                 getString(R.string.NCname),
@@ -122,7 +123,8 @@ public class MainProfile extends AppCompatActivity {
                 convertStrIdtoString(R.string.theNeighborhoodCafeTakeout),
                 convertStrIdtoString(R.string.theNeighborhoodCafeDelivery),
                 convertStrIdtoString(R.string.theNeighborhoodCafeWebsite),
-                convertStrIdtoString(R.string.theNeighborhoodCafePhoneNum)
+                convertStrIdtoString(R.string.theNeighborhoodCafePhoneNum),
+                getString(R.string.theNeighborhoodCafeDistance)
         );
         shish = new Restaurant(
                 convertStrIdtoString(R.string.ShishMediterraneanRestaurantName),
@@ -131,7 +133,8 @@ public class MainProfile extends AppCompatActivity {
                 convertStrIdtoString(R.string.ShishMediterraneanRestaurantTakeout),
                 convertStrIdtoString(R.string.ShishMediterraneanRestaurantDelivery),
                 convertStrIdtoString(R.string.ShishMediterraneanRestaurantWebsite),
-                convertStrIdtoString(R.string.ShishMediterraneanRestaurantPhoneNum)
+                convertStrIdtoString(R.string.ShishMediterraneanRestaurantPhoneNum),
+                getString(R.string.shishDistance)
         );
 
         countryFriedSteakAndEggs = new Dish(R.drawable.countryfriedsteak,
@@ -202,6 +205,7 @@ public class MainProfile extends AppCompatActivity {
         int i = ran.nextInt(dishListTemp.size());
         Dish dish = dishListTemp.get(i);
         currentDish = dish;
+        currentRestaurant = currentDish.getRestaurant();
         setProfile(dish);
     }
 
@@ -242,15 +246,15 @@ public class MainProfile extends AppCompatActivity {
      */
     public void dislikeCurrentDish() {
 
-        if (dishListTemp.size() > 0) {
             swipeLeftDishes.add(currentDish);
             dishListTemp.remove(currentDish);
-            setProfile(dishListTemp.get(0));
-            System.out.println("--------------------------------Current dish disliked, swiping left");
-            System.out.println("----------------------------Original dish list " + dishListTemp);
-            System.out.println("----------------------------liked dish list " + likedDishes);
-            System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
-        }
+            if (dishListTemp.size() > 0) {
+                setProfile(dishListTemp.get(0));
+                System.out.println("--------------------------------Current dish disliked, swiping left");
+                System.out.println("----------------------------Original dish list " + dishListTemp);
+                System.out.println("----------------------------liked dish list " + likedDishes);
+                System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
+            }
     }
 
     /**
@@ -260,9 +264,10 @@ public class MainProfile extends AppCompatActivity {
      */
     public void likeCurrentDish() {
 
-        if (dishListTemp.size() > 0) {
             likedDishes.add(currentDish);
             dishListTemp.remove(currentDish);
+        if (dishListTemp.size() > 0) {
+
             setProfile(dishListTemp.get(0));
 
             System.out.println("--------------------------------Current dish liked, swiping right");
@@ -274,7 +279,6 @@ public class MainProfile extends AppCompatActivity {
         Intent i = new Intent(MainProfile.this, MatchDisplay.class);
         i.putExtra("matched_dish", currentDish);
 //        j.putExtra()
-        //TODO: set up new MatchPage UI & Match List page
         startActivity(i);
 
     }

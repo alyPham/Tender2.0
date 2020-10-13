@@ -73,6 +73,9 @@
     <string name="Takeout">Take out: </string>
     <string name="Delivery">delivery: </string>
     <string name="Matched">Matched</string>
+    <string name="indochine_distance">0.2 miles away</string>
+    <string name="theNeighborhoodCafeDistance">0.5 miles away</string>
+    <string name="shishDistance">0.3 miles away</string>
 
 
 </resources>

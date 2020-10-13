@@ -26,16 +26,18 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="92dp"
+        android:background="#5EF8B4B4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/DishName2"
+        android:id="@+id/DishName1"
         android:layout_width="268dp"
         android:layout_height="25dp"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="8dp"
+        android:background="#79FFFFFF"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/DishImage1" />
@@ -47,15 +49,18 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="40dp"
+        android:background="#5EF8B4B4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DishImage1" />
 
     <TextView
-        android:id="@+id/DishName"
+        android:id="@+id/DishName2"
         android:layout_width="268dp"
         android:layout_height="25dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
+        android:background="#79FFFFFF"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/DishImage2" />
@@ -67,6 +72,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="40dp"
+        android:background="#5EF8B4B4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DishImage2" />
 
@@ -76,29 +82,18 @@
         android:layout_height="25dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
+        android:background="#79FFFFFF"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/DishImage3" />
-
-    <TextView
-        android:id="@+id/DishName1"
-        android:layout_width="268dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/DishImage1" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="71dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/delete_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

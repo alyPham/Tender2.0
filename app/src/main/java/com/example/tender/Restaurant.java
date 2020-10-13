@@ -1,6 +1,9 @@
 package com.example.tender;
 
-public class Restaurant {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Restaurant implements Parcelable {
     String name;
     String daysAndHours;
     String dineIn;
@@ -8,6 +11,7 @@ public class Restaurant {
     String delivery;
     String website;
     String phoneNum;
+    String distance;
 
     public Restaurant(){
         name = "default name";
@@ -17,6 +21,7 @@ public class Restaurant {
         delivery = "default delivery";
         website = "default website";
         phoneNum = "default phone number";
+        distance = "default distance";
     }
 
     public Restaurant(String name,
@@ -25,7 +30,8 @@ public class Restaurant {
                       String takeOut,
                       String delivery,
                       String website,
-                      String phoneNum){
+                      String phoneNum,
+                      String distance){
         this.name = name;
         this.daysAndHours = daysAndHours;
         this.dineIn = dineIn;
@@ -33,7 +39,51 @@ public class Restaurant {
         this.delivery = delivery;
         this.website = website;
         this.phoneNum = phoneNum;
+        this.distance = distance;
     }
+
+    protected Restaurant(Parcel in) {
+        name = in.readString();
+        daysAndHours = in.readString();
+        dineIn = in.readString();
+        takeOut = in.readString();
+        delivery = in.readString();
+        website = in.readString();
+        phoneNum = in.readString();
+        distance = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(daysAndHours);
+        dest.writeString(dineIn);
+        dest.writeString(takeOut);
+        dest.writeString(delivery);
+        dest.writeString(website);
+        dest.writeString(phoneNum);
+        dest.writeString(distance);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Restaurant> CREATOR = new Creator<Restaurant>() {
+        @Override
+        public Restaurant createFromParcel(Parcel in) {
+            return new Restaurant(in);
+        }
+
+        @Override
+        public Restaurant[] newArray(int size) {
+            return new Restaurant[size];
+        }
+    };
+
+    public String getDistance(){return distance;}
+    public void setDistance(String distance){this.distance = distance;}
 
     public String getName() {
         return name;
