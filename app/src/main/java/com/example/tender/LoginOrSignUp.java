@@ -13,7 +13,7 @@ public class LoginOrSignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_or_signup);
+        setContentView(R.layout.login_or_sign_up);
 
         user_Login = (Button) findViewById(R.id.button_login);
         user_SignUp = (Button) findViewById(R.id.button_signup);
