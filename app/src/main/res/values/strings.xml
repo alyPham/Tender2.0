@@ -36,10 +36,8 @@
     <string name="myBurgerPhoneNum">(651)–330–7816</string>
 
 
-
     <string name="theHealingPlateName">The Healing Plate</string>
     <string name="seafoodBoilName">Seafood Boil</string>
-
 
 
     <string name="countryFriedSteakAndEggsName">Country Fried Steak and Egg, 13.5</string>
@@ -53,7 +51,6 @@
     <string name="theNeighborhoodCafeDineIn">No</string>
     <string name="theNeighborhoodCafeTakeout">yes</string>
     <string name="theNeighborhoodCafeDelivery">No</string>
-
 
 
     <string name="chickenShawarmaName">chicken shawarma, 7.95</string>
