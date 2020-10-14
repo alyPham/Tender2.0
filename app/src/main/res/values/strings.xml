@@ -73,6 +73,8 @@
     <string name="indochine_distance">0.2 miles away</string>
     <string name="theNeighborhoodCafeDistance">0.5 miles away</string>
     <string name="shishDistance">0.3 miles away</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 
 
 </resources>

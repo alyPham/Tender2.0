@@ -13,13 +13,16 @@ public class Relationship extends AppCompatActivity {
     boolean longTerm = false;
     boolean hookUp = false;
 
-    Button longButton = (Button) findViewById(R.id.longButton);
-    Button shortButton = (Button) findViewById(R.id.shortButton);
+    Button longButton;
+    Button shortButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relationship);
+
+        longButton = findViewById(R.id.longButton);
+        shortButton = findViewById(R.id.shortButton);
     }
 
     public void setLongTerm(View view){
