@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".FirstFragment">
+    tools:context=".NewUserPage">
 
     <TextView
         android:id="@+id/textView9"
@@ -50,47 +50,65 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/diet"
         android:layout_width="282dp"
         android:layout_height="52dp"
         android:background="#F4BBBB"
         android:capitalize="characters"
         android:fontFamily="@font/roboto_bold"
         android:text="Dietary Restrictions"
+        android:onClick= "dietPage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintVertical_bias="0.179"
+        />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/location"
         android:layout_width="282dp"
         android:layout_height="52dp"
         android:background="#F4BBBB"
         android:fontFamily="@font/roboto_bold"
         android:text="Location"
+        android:onClick= "locationPage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/diet"
         app:layout_constraintVertical_bias="0.138" />
 
+
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/relationship"
         android:layout_width="282dp"
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
         android:background="#F4BBBB"
         android:fontFamily="@font/roboto_bold"
         android:text="Relationship Type"
+        android:onClick= "relationshipPage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/location"
         app:layout_constraintVertical_bias="0.153" />
+
+    <Button
+        android:id="@+id/proceed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proceed"
+        android:onClick= "goToFood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
