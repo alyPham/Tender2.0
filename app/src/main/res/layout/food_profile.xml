@@ -11,27 +11,35 @@
     <TextView
         android:id="@+id/dishname"
         android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:textSize="24sp"
+        android:layout_height="36dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/ropa_sans"
+        android:text="Onion Rings"
+        android:textColor="#404040"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishimage" />
 
     <ImageView
         android:id="@+id/dishimage"
-        android:layout_width="380dp"
-        android:layout_height="380dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="346dp"
+        android:layout_height="420dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/onion_rings" />
+
+    <ImageView
+        android:id="@+id/text_mask"
+        android:layout_width="346dp"
+        android:layout_height="420dp"
+        app:layout_constraintStart_toStartOf="@+id/dishimage"
+        app:layout_constraintTop_toTopOf="@+id/dishimage"
+        app:srcCompat="@drawable/text_mask" />
 
     <ImageButton
         android:id="@+id/matchbutton"
@@ -39,7 +47,7 @@
         android:layout_height="62dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="40dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
@@ -49,16 +57,16 @@
 
     <TextView
         android:id="@+id/dishdescription"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="serif"
-        android:textColor="#9C7C7C"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dishname" />
+        android:layout_width="346dp"
+        android:layout_height="120dp"
+        android:fontFamily="@font/trebuchet"
+        android:gravity="bottom"
+        android:padding="12dp"
+        android:text="Perfect for any millennial, minus the self-deprecating humor. #relatable # trendy"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dishimage"
+        app:layout_constraintStart_toStartOf="@+id/dishimage" />
 
     <ImageButton
         android:id="@+id/homebutton"
@@ -66,7 +74,7 @@
         android:layout_height="62dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="40dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/home_button"
         android:scaleType="fitCenter"
@@ -78,12 +86,24 @@
         android:id="@+id/MoreInfo"
         android:layout_width="144dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="53dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/matchbutton"
         app:layout_constraintStart_toEndOf="@+id/homebutton"
         app:srcCompat="@drawable/more_info" />
+
+    <TextView
+        android:id="@+id/price_and_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:fontFamily="@font/trebuchet"
+        android:text="$4.75 | 3.5 miles"
+        android:textColor="#404040"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dishname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

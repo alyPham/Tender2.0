@@ -36,7 +36,7 @@ public class FoodProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_food_profile, container, false);
 
         moreInfoFragment = new MoreInfoFragment();
-        moreInfo = view.findViewById(R.id.moreInfo_Fragment);
+        moreInfo = view.findViewById(R.id.MoreInfo);
         moreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
