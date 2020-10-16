@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.fragment_container, foodProfileFragment);
         fragmentTransaction.commit();
 
-        homeButton = findViewById(R.id.homebutton_fragment);
-        matchButton = findViewById(R.id.matchbutton_fragment);
+        homeButton = findViewById(R.id.homebutton);
+        matchButton = findViewById(R.id.matchbutton);
 
         dishManager = new DishManager();
         restaurantManager = new RestaurantManager();
