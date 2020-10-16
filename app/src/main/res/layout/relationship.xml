@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="411dp"
         android:layout_height="92dp"
-        android:background="#F4BBBB"
+        android:background="#EF7474"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#F0575454"
         android:textSize="30sp"
@@ -23,33 +24,35 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="287dp"
-        android:layout_height="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
         android:text="Relationship Type"
-        android:textColor="#F0575454"
+        android:textColor="#F0FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/textView17"
         app:layout_constraintTop_toTopOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.576" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="370dp"
         android:layout_height="59dp"
         android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
         android:text="What kind of match are you pursuing?"
         android:textColor="#BF575656"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        app:layout_constraintVertical_bias="0.015" />
 
     <View
         android:id="@+id/divider4"
@@ -65,7 +68,7 @@
         android:id="@+id/longButton"
         android:layout_width="309dp"
         android:layout_height="59dp"
-        android:background="#FF8B8B"
+        android:background="@drawable/rounded_button"
         android:onClick="setLongTerm"
         android:text="Long-Term (Sit-In)"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,26 +81,26 @@
         android:id="@+id/shortButton"
         android:layout_width="309dp"
         android:layout_height="59dp"
-        android:background="#F4BBBB"
-        android:text="Hook-Up (Takeout/Fast-Food)"
+        android:background="@drawable/rounded_button"
         android:onClick="setShortTerm"
+        android:text="Hook-Up (Takeout/Fast-Food)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/longButton"
         app:layout_constraintVertical_bias="0.13" />
 
-    <Button
-        android:id="@+id/backButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:onClick="goBack"
+    <ImageButton
+        android:id="@+id/back_button3"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintVertical_bias="0.969"
+        app:srcCompat="@drawable/next_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
