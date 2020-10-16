@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
     //TODO: Implement this method and all the other dietary restrictions
     public void cleanGeneralDishesForDiaryFree(){
         for (Dish i:generalDishes){
-            if (!i.getDF()){
-                generalDishes.remove(i);
-            }
+//            if (!i.getDF()){
+//                generalDishes.remove(i);
+//            }
         }
     }
 

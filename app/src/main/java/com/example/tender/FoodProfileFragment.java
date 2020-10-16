@@ -19,7 +19,7 @@ public class FoodProfileFragment extends Fragment {
     private Dish currentDish;
     private Fragment moreInfoFragment;
     private ImageView imageView;
-    private ImageButton moreInfo;
+//    private ImageButton moreInfo;
     private TextView dishName;
     private TextView priceAndDistance;
     private TextView blurb;
@@ -39,23 +39,24 @@ public class FoodProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food_profile, container, false);
 
-        dishName = view.findViewById(R.id.dishname_fragment);
-        moreInfo = view.findViewById(R.id.moreInfo_Fragment);
-        priceAndDistance = view.findViewById(R.id.priceNDistance);
-        blurb = view.findViewById(R.id.DishDescription);
-        imageView = view.findViewById(R.id.dishImage_fragment);
+        dishName = view.findViewById(R.id.dishname);
+        // TODO: delete moreInfo
+//        moreInfo = view.findViewById(R.id.MoreInfo);
+        priceAndDistance = view.findViewById(R.id.price_and_distance);
+        blurb = view.findViewById(R.id.blurb);
+        imageView = view.findViewById(R.id.dishimage);
 
         moreInfoFragment = new MoreInfoFragment();
 
-        moreInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, moreInfoFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
+//        moreInfo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_container, moreInfoFragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+//            }
+//        });
 
 
         // Inflate the layout for this fragment

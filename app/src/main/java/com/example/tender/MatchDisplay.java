@@ -47,6 +47,6 @@ public class MatchDisplay extends AppCompatActivity {
 
     public void displayDish(Dish dish) {
         dishName1.setText(dish.getName());
-        dishImage1.setImageResource(dish.getImgID());
+//        dishImage1.setImageResource(dish.getImgID());
     }
 }

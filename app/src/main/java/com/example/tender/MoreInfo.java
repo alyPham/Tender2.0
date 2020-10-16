@@ -38,7 +38,7 @@ public class MoreInfo extends AppCompatActivity {
         backToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MoreInfo.this, MainProfile.class);
+                Intent i = new Intent(MoreInfo.this, OldMainProfile.class);
                 startActivity(i);
             }
         });
@@ -58,7 +58,7 @@ public class MoreInfo extends AppCompatActivity {
     }
 
     public void displayRestaurantInfo(){
-        dishImage.setImageResource(currentDish.getImgID());
+//        dishImage.setImageResource(currentDish.getImgID());
         distance.setText(currentRestaurant.getDistance());
         dishName.setText(currentDish.getName());
         restaurantName.setText(currentRestaurant.getName());

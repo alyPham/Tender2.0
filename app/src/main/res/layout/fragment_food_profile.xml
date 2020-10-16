@@ -41,7 +41,7 @@
         app:srcCompat="@drawable/text_mask" />
 
     <TextView
-        android:id="@+id/dishdescription"
+        android:id="@+id/blurb"
         android:layout_width="346dp"
         android:layout_height="120dp"
         android:fontFamily="@font/trebuchet"

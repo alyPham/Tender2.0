@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-public class MainProfile extends AppCompatActivity {
+public class OldMainProfile extends AppCompatActivity {
     float x1, x2, y1, y2;
 
     ImageButton moreInfo;
@@ -53,7 +53,7 @@ public class MainProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println(currentRestaurant.getDistance());
-                Intent i = new Intent(MainProfile.this, MoreInfo.class);
+                Intent i = new Intent(OldMainProfile.this, MoreInfo.class);
                 i.putExtra("currentDish", currentDish);
                 i.putExtra("currentRestaurant", currentRestaurant);
                 startActivity(i);
@@ -62,9 +62,9 @@ public class MainProfile extends AppCompatActivity {
         });
 
         dishImageView = findViewById(R.id.dishimage);
-        nameTextView = findViewById(R.id.dishname_fragment);
-        dishDescriptionView = findViewById(R.id.dishdescription);
-        distanceView = findViewById(R.id.priceNDistance);
+//        nameTextView = findViewById(R.id.dishname_fragment);
+//        dishDescriptionView = findViewById(R.id.dishdescription);
+//        distanceView = findViewById(R.id.priceNDistance);
 
         dishListTemp = new ArrayList<>();
         restaurantsListTemp = new ArrayList<>();
@@ -99,7 +99,7 @@ public class MainProfile extends AppCompatActivity {
      */
     public void setProfile(Dish dish) {
         currentDish = dish;
-        dishImageView.setImageResource(dish.getImgID());
+//        dishImageView.setImageResource(dish.getImgID());
         nameTextView.setText(dish.getName());
         dishDescriptionView.setText(dish.getBlurb());
     }
@@ -136,21 +136,21 @@ public class MainProfile extends AppCompatActivity {
                 getString(R.string.shishDistance)
         );
 
-        countryFriedSteakAndEggs = new Dish(R.drawable.countryfriedsteak,
-                getString(R.string.countryFriedSteakAndEggsName),
-                convertStrIdtoString(R.string.countryFriedSteakAndEggsDescription),
-                convertStrIdtoString(R.string.countryFriedSteakAndEggsDistance),
-                theNeighborhoodCafe);
-        chickenShawarma = new Dish(R.drawable.chickenshawarma,
-                convertStrIdtoString(R.string.chickenShawarmaName),
-                convertStrIdtoString(R.string.chickenShawarmaDescription),
-                convertStrIdtoString(R.string.chickenShawarmaDistance),
-                shish);
-        rareBeefPho = new Dish(R.drawable.chickenshawarma,
-                convertStrIdtoString(R.string.chickenShawarmaName),
-                convertStrIdtoString(R.string.chickenShawarmaDescription),
-                convertStrIdtoString(R.string.chickenShawarmaDistance),
-                shish);
+//        countryFriedSteakAndEggs = new Dish(R.drawable.countryfriedsteak,
+//                getString(R.string.countryFriedSteakAndEggsName),
+//                convertStrIdtoString(R.string.countryFriedSteakAndEggsDescription),
+//                convertStrIdtoString(R.string.countryFriedSteakAndEggsDistance),
+//                theNeighborhoodCafe);
+//        chickenShawarma = new Dish(R.drawable.chickenshawarma,
+//                convertStrIdtoString(R.string.chickenShawarmaName),
+//                convertStrIdtoString(R.string.chickenShawarmaDescription),
+//                convertStrIdtoString(R.string.chickenShawarmaDistance),
+//                shish);
+//        rareBeefPho = new Dish(R.drawable.chickenshawarma,
+//                convertStrIdtoString(R.string.chickenShawarmaName),
+//                convertStrIdtoString(R.string.chickenShawarmaDescription),
+//                convertStrIdtoString(R.string.chickenShawarmaDistance),
+//                shish);
         initializeDishListTemp();
         initializeRestaurantListTemp();
 
@@ -275,7 +275,7 @@ public class MainProfile extends AppCompatActivity {
             System.out.println("----------------------------swipe left dish list " + swipeLeftDishes);
         }
 
-        Intent i = new Intent(MainProfile.this, MatchDisplay.class);
+        Intent i = new Intent(OldMainProfile.this, MatchDisplay.class);
         i.putExtra("matched_dish", currentDish);
 //        j.putExtra()
         startActivity(i);
