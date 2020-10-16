@@ -2,15 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/getting_started"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     tools:context=".NewUserPage">
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="321dp"
-        android:layout_height="54dp"
+        android:id="@+id/welcome_to_tender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:text="Welcome to Tender!"
         android:textColor="#F0575454"
@@ -19,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.243" />
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -27,88 +29,81 @@
         android:layout_height="102dp"
         android:rotation="315"
         android:src="@drawable/tender_icon"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_to_tender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="317dp"
-        android:layout_height="38dp"
+        android:id="@+id/how_may_i_serve_you_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="How may I better serve you today?"
-        android:textColor="#BF575656"
+        android:text="How may I serve you today?"
+        android:textColor="#BF393838"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_to_tender"
+        app:layout_constraintVertical_bias="0.022" />
 
     <Button
         android:id="@+id/diet"
         android:layout_width="282dp"
         android:layout_height="52dp"
-        android:background="#F4BBBB"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/rounded_button"
         android:capitalize="characters"
         android:fontFamily="@font/roboto_bold"
+        android:onClick="dietPage"
         android:text="Dietary Restrictions"
-        android:onClick= "dietPage"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.179"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <Button
         android:id="@+id/location"
         android:layout_width="282dp"
         android:layout_height="52dp"
-        android:background="#F4BBBB"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/roboto_bold"
-        android:text="Location"
-        android:onClick= "locationPage"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="locationPage"
+        android:text="Getting Started"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diet"
-        app:layout_constraintVertical_bias="0.138" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/relationship"
         android:layout_width="282dp"
         android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:background="#F4BBBB"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/roboto_bold"
+        android:onClick="relationshipPage"
         android:text="Relationship Type"
-        android:onClick= "relationshipPage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintTop_toBottomOf="@+id/diet"
+        app:layout_constraintVertical_bias="0.139" />
 
-    <Button
+    <ImageButton
         android:id="@+id/proceed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Proceed"
-        android:onClick= "goToFood"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:onClick="goToFood"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/next_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

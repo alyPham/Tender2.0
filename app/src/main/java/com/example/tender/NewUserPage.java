@@ -21,7 +21,7 @@ public class NewUserPage extends AppCompatActivity {
     }
 
     public void locationPage(View view) {
-        Intent i = new Intent(NewUserPage.this, Location.class);
+        Intent i = new Intent(NewUserPage.this, GettingStartedPage.class);
         startActivity(i);
     }
 
