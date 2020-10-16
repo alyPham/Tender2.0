@@ -31,7 +31,7 @@ public class NewUserPage extends AppCompatActivity {
     }
 
     public void goToFood(View view) {
-        Intent i = new Intent(NewUserPage.this, MainProfile.class);
+        Intent i = new Intent(NewUserPage.this, MainActivity.class);
         startActivity(i);
     }
 }

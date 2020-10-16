@@ -1,9 +1,7 @@
 package com.example.tender;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -36,7 +34,7 @@ public class MoreInfo extends AppCompatActivity {
         currentRestaurant = getIntent().getParcelableExtra("currentRestaurant");
         currentDish = getIntent().getParcelableExtra("currentDish");
 
-        backToMain = findViewById(R.id.BackToMain);
+        backToMain = findViewById(R.id.MoreInfo);
         backToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

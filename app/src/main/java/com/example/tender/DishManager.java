@@ -6,7 +6,6 @@ import androidx.annotation.Nullable;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.common.base.Function;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class DishManager {
@@ -26,7 +26,6 @@ public class DishManager {
     FirebaseFirestore db;
     private List<Dish> dishes;
     StorageReference storageReference;
-    DatabaseReference databaseReference;
 
     public DishManager(){
         db = FirebaseFirestore.getInstance();
@@ -43,26 +42,53 @@ public class DishManager {
         return i;
     }
 
-    public void getDishes(final Function<List<Dish>, Void> function){
 
-        db.collection("dish").addSnapshotListener(new EventListener<QuerySnapshot>() {
+    public List<Dish> getDishesTest(){
+        db.collection("Dish").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 for (DocumentSnapshot snapshot : value){
                     Dish dish = new Dish();
                     System.out.println(snapshot.get("name").toString());
-                    System.out.println(snapshot.get("description").toString());
-                    System.out.println(snapshot.get("distance").toString());
+////                    System.out.println(snapshot.get("blurb").toString());
+//                    System.out.println(snapshot.get("price").toString());
 
                     dish.setName(snapshot.get("name").toString());
-                    dish.setDescription(snapshot.get("description").toString());
-                    dish.setDistance(snapshot.get("distance").toString());
+//                    dish.setBlurb(snapshot.get("blurb").toString());
+                    dish.setPrice(snapshot.get("price").toString());
                     dishes.add(dish);
-                    System.out.println("----------new dish added: \n" + dishes);
-                    function.apply(dishes);
                 }
             }
         });
+        return null;
+    }
+
+    public List<Dish> getDishes(final Function<List<Dish>, Void> function){
+
+        db.collection("Dish").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                for (DocumentSnapshot snapshot : value){
+                    Dish dish = new Dish();
+//                    System.out.println(snapshot.get("name").toString());
+////                    System.out.println(snapshot.get("blurb").toString());
+//                    System.out.println(snapshot.get("price").toString());
+
+                    dish.setName(snapshot.get("name").toString());
+//                    dish.setBlurb(snapshot.get("blurb").toString());
+                    dish.setPrice(snapshot.get("price").toString());
+                    dishes.add(dish);
+
+                    Random rand = new Random();
+//                    System.out.println("---------------------random dish generated within the method "
+//                            + dishes.get(rand.nextInt(dishes.size())).getName());
+
+                    function.apply(dishes);
+
+                }
+            }
+        });
+        return dishes;
     }
 
     public void setDishImage(final Dish dish, StorageReference storageReference) throws IOException {
@@ -78,6 +104,11 @@ public class DishManager {
                 // Handle any errors
             }
         });
+    }
+
+    public Dish getRandomDish(List<Dish> dishes){
+        Random rand = new Random();
+        return dishes.get(rand.nextInt(dishes.size()));
     }
 
 }

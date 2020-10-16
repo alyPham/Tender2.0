@@ -6,23 +6,23 @@ import android.os.Parcelable;
 public class Dish implements Parcelable {
     private Integer ImgID;
     private String name;
-    private String description;
-    String distance;
+    private String blurb;
     private Restaurant restaurant;
+    private String price;
 
     public Dish(){
         ImgID = R.drawable.default_dish_image;
         name = "default name";
-        description = "default description";
-        distance = "default distance";
+        blurb = "default blurb";
+        price = "default price";
         restaurant = new Restaurant();
-    };
+    }
 
-    public Dish(int ImgID, String name, String description, String distance, Restaurant restaurant){
+    public Dish(int ImgID, String name, String blurb, String price, Restaurant restaurant){
         this.ImgID = ImgID;
         this.name = name;
-        this.description = description;
-        this.distance = distance;
+        this.blurb = blurb;
+        this.price = price;
         this.restaurant = restaurant;
     }
 
@@ -34,8 +34,8 @@ public class Dish implements Parcelable {
             ImgID = in.readInt();
         }
         name = in.readString();
-        description = in.readString();
-        distance = in.readString();
+        blurb = in.readString();
+        price = in.readString();
     }
 
     public static final Creator<Dish> CREATOR = new Creator<Dish>() {
@@ -58,13 +58,13 @@ public class Dish implements Parcelable {
         this.name = name;
     }
 
-    public void setDescription(String description){
+    public void setBlurb(String blurb){
         this.name = name;
     }
 
-    public void setDistance(String distance){
-        this.distance = distance;
-    }
+    public void setPrice(String price){this.price = price;}
+
+    public String getPrice(){return price;}
 
     public int getImgID(){
         return ImgID;
@@ -74,12 +74,8 @@ public class Dish implements Parcelable {
         return name;
     }
 
-    public String getDescription(){
-        return description;
-    }
-
-    public String getDistance(){
-        return distance;
+    public String getBlurb(){
+        return blurb;
     }
 
     public Restaurant getRestaurant(){
@@ -100,7 +96,7 @@ public class Dish implements Parcelable {
             dest.writeInt(ImgID);
         }
         dest.writeString(name);
-        dest.writeString(description);
-        dest.writeString(distance);
+        dest.writeString(blurb);
+        dest.writeString(price);
     }
 }
