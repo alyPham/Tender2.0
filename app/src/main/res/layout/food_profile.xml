@@ -39,7 +39,7 @@
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BackToMain"
+        app:layout_constraintStart_toEndOf="@+id/MoreInfo"
         app:srcCompat="@drawable/matchicon" />
 
     <TextView
@@ -81,7 +81,7 @@
         app:srcCompat="@drawable/locationicon" />
 
     <TextView
-        android:id="@+id/distance"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/BackToMain"
+        android:id="@+id/MoreInfo"
         android:layout_width="147dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"

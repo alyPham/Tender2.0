@@ -32,8 +32,8 @@
 
     <TextView
         android:id="@+id/dishname_moreinfo"
-        android:layout_width="379dp"
-        android:layout_height="60dp"
+        android:layout_width="382dp"
+        android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="452dp"
@@ -125,11 +125,11 @@
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BackToMain"
+        app:layout_constraintStart_toEndOf="@+id/MoreInfo"
         app:srcCompat="@drawable/matchicon" />
 
     <ImageButton
-        android:id="@+id/BackToMain"
+        android:id="@+id/MoreInfo"
         android:layout_width="147dp"
         android:layout_height="70dp"
         android:layout_marginStart="28dp"

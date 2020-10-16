@@ -75,6 +75,10 @@
     <string name="shishDistance">0.3 miles away</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="website">"Website: "</string>
+    <string name="phone">"Phone: "</string>
 
 
 </resources>
