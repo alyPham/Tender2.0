@@ -3,39 +3,35 @@ package com.example.tender;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Dish implements Parcelable {
-    private Integer ImgID;
+public class Dish implements Parcelable{
+    private byte[] bytes;
     private String name;
     private String blurb;
     private Restaurant restaurant;
-    private String price;
+    private String priceAndDistance;
 
     public Dish(){
-        ImgID = R.drawable.default_dish_image;
+        bytes = new byte[1];
         name = "default name";
         blurb = "default blurb";
-        price = "default price";
+        priceAndDistance = "default price";
         restaurant = new Restaurant();
     }
 
-    public Dish(int ImgID, String name, String blurb, String price, Restaurant restaurant){
-        this.ImgID = ImgID;
+    public Dish(byte[] bytes, String name, String blurb, String priceAndDistance, Restaurant restaurant){
+        this.bytes = bytes;
         this.name = name;
         this.blurb = blurb;
-        this.price = price;
+        this.priceAndDistance = priceAndDistance;
         this.restaurant = restaurant;
     }
 
-
     protected Dish(Parcel in) {
-        if (in.readByte() == 0) {
-            ImgID = null;
-        } else {
-            ImgID = in.readInt();
-        }
+        bytes = in.createByteArray();
         name = in.readString();
         blurb = in.readString();
-        price = in.readString();
+        restaurant = in.readParcelable(Restaurant.class.getClassLoader());
+        priceAndDistance = in.readString();
     }
 
     public static final Creator<Dish> CREATOR = new Creator<Dish>() {
@@ -50,8 +46,8 @@ public class Dish implements Parcelable {
         }
     };
 
-    public void setImgID(int ImgID){
-        this.ImgID = ImgID;
+    public void setBytes(byte[] bytes){
+        this.bytes = bytes;
     }
 
     public void setName(String name){
@@ -62,12 +58,13 @@ public class Dish implements Parcelable {
         this.name = name;
     }
 
-    public void setPrice(String price){this.price = price;}
+    public void setPriceAndDistance(String priceAndDistance){this.priceAndDistance = priceAndDistance;}
+    public void setRestaurant(Restaurant restaurant){this.restaurant = restaurant;}
 
-    public String getPrice(){return price;}
+    public String getPriceAndDistance(){return priceAndDistance;}
 
-    public int getImgID(){
-        return ImgID;
+    public byte[] getBytes(){
+        return bytes;
     }
 
     public String getName(){
@@ -89,14 +86,10 @@ public class Dish implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        if (ImgID == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(ImgID);
-        }
+        dest.writeByteArray(bytes);
         dest.writeString(name);
         dest.writeString(blurb);
-        dest.writeString(price);
+        dest.writeParcelable(restaurant, flags);
+        dest.writeString(priceAndDistance);
     }
 }

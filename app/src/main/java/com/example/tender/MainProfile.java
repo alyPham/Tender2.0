@@ -62,9 +62,9 @@ public class MainProfile extends AppCompatActivity {
         });
 
         dishImageView = findViewById(R.id.dishimage);
-        nameTextView = findViewById(R.id.dishname);
+        nameTextView = findViewById(R.id.dishname_fragment);
         dishDescriptionView = findViewById(R.id.dishdescription);
-        distanceView = findViewById(R.id.price);
+        distanceView = findViewById(R.id.priceNDistance);
 
         dishListTemp = new ArrayList<>();
         restaurantsListTemp = new ArrayList<>();

@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/dishname"
+        android:id="@+id/dishname_fragment"
         android:layout_width="379dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -81,7 +81,7 @@
         app:srcCompat="@drawable/locationicon" />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/priceNDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"

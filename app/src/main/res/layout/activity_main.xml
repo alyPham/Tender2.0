@@ -11,13 +11,15 @@
         android:id="@+id/matchbutton_fragment"
         android:layout_width="70dp"
         android:layout_height="67dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
         android:layout_marginBottom="8dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/matchicon"
-        tools:layout_editor_absoluteX="280dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/matchicon" />
 
     <ImageButton
         android:id="@+id/homebutton_fragment"
