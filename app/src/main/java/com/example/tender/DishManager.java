@@ -70,6 +70,10 @@ public class DishManager {
 
                     }
                     dish.setBlurb(snapshot.get("blurb").toString());
+                    dish.setGlutenFree(snapshot.get("gf").toString());
+                    dish.setDairyFree(snapshot.get("df").toString());
+                    dish.setVegetarian(snapshot.get("v").toString());
+                    dish.setVegan(snapshot.get("vg").toString());
                     String ref = "test_alex/" + dish.getName() + ".jpg";
                     System.out.println(ref);
                     storageReference = FirebaseStorage.getInstance().getReference().child(ref);
