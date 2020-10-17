@@ -24,7 +24,9 @@ public class DishManager {
 
     public DishManager(){
         db = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference().child("test_alex");
+//        storageReference = FirebaseStorage.getInstance().getReference()
+//                .child("test_alex/Avocado Toast.jpg");
+//        storageReference = FirebaseStorage.getInstance().getReference().child("test_alex");
 
         dishes = new ArrayList<>();
     }
@@ -37,18 +39,41 @@ public class DishManager {
                 for (DocumentSnapshot snapshot : value){
                     Dish dish = new Dish();
                     dish.setName(snapshot.get("name").toString());
-                    dish.setPriceAndDistance(snapshot.get("price").toString());
                     Restaurant restaurant = new Restaurant();
                     if (snapshot.get("restaurant") instanceof Map) {
-                        // TODO: add more gets to set up a complete restaurant object
-                        String distance = ((Map<String, String>) snapshot.get("restaurant")).get("distance");
-                        System.out.println(distance);
-                        dish.setRestaurant(new Restaurant());
+                        String distance = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("distance");
+                        String hours = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("hours");
+                        String name = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("name");
+                        String delivery = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("delivery");
+                        String dineIn = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("dine in");
+                        String pickup = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("pickup");
+                        String website = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("website");
+                        String phoneNum = ((Map<String, String>) snapshot.get("restaurant")).
+                                get("phone number");
+                        restaurant.setPhoneNum(phoneNum);
+                        restaurant.setWebsite(website);
+                        restaurant.setDineIn(dineIn);
+                        restaurant.setDelivery(delivery);
+                        restaurant.setTakeOut(pickup);
+                        restaurant.setDistance(distance);
+                        restaurant.setName(name);
+                        restaurant.setDaysAndHours(hours);
+                        dish.setRestaurant(restaurant);
+                        dish.setPriceAndDistance("$" + snapshot.get("price").toString() + " | " + distance);
+
                     }
-                    if (snapshot.get("blurb") != null){
-                        dish.setBlurb(snapshot.get("blurb").toString());
-                    }
-                    setDishImage(dish, storageReference);
+                    dish.setBlurb(snapshot.get("blurb").toString());
+                    String ref = "test_alex/" + dish.getName() + ".jpg";
+                    System.out.println(ref);
+                    storageReference = FirebaseStorage.getInstance().getReference().child(ref);
+//                    setDishImage(dish, storageReference);
                     dishes.add(dish);
                     function.apply(dishes);
 
@@ -59,11 +84,12 @@ public class DishManager {
     }
 
     public void setDishImage(final Dish dish, StorageReference storageReference) {
-        storageReference.child(dish.getName()).getBytes(ONE_MEGABYTE)
+        storageReference.getBytes(ONE_MEGABYTE)
                 .addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
                 dish.setBytes(bytes);
+                System.out.println("-----------------------got some image!");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

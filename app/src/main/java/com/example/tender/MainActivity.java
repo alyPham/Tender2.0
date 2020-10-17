@@ -7,9 +7,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.service.autofill.FieldClassification;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageButton;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,12 +21,12 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final Integer LOAD_SIZE = 45;
+    private static final Integer LOAD_SIZE = 15;
     double x1, y1, x2, y2;
     DishManager dishManager;
     RestaurantManager restaurantManager;
     List<Dish> generalDishes;
-    List<Dish> likedDishes;
+    List<Dish> likedDishes = new ArrayList<>();
     List<Dish> dislikedDishes;
 
     Dish currentDish;
@@ -31,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
     Fragment foodProfileFragment;
     Fragment moreInfoFragment;
+    Fragment currentFragment;
 
     ImageButton homeButton;
     ImageButton matchButton;
+    ImageButton moreInfo;
 
     Random rand;
 
@@ -49,14 +54,24 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragment_container, foodProfileFragment);
         fragmentTransaction.commit();
+        currentFragment = foodProfileFragment;
 
         homeButton = findViewById(R.id.homebutton);
         matchButton = findViewById(R.id.matchbutton);
+//        moreInfo = findViewById(R.id.MoreInfo);
+//        moreInfo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (currentFragment == foodProfileFragment){
+//                    moreInfo.set
+//                }
+//            }
+//        });
 
         dishManager = new DishManager();
         restaurantManager = new RestaurantManager();
         generalDishes = new ArrayList<>();
-        likedDishes = new ArrayList<>();
+//        likedDishes = new ArrayList<>();
         dislikedDishes = new ArrayList<>();
 
         rand = new Random();
@@ -108,25 +123,36 @@ public class MainActivity extends AppCompatActivity {
     public void passCurrentDishProfile(Fragment fragment){
         Bundle bundle = new Bundle();
         bundle.putParcelable("currentDish", currentDish);
+        System.out.println("---------------------current dish in main activity" + currentDish);
         fragment.setArguments(bundle);
     }
 
     public void updateCurrentDish(){
         int randomNum = rand.nextInt(generalDishes.size());
+        while (dislikedDishes.contains(generalDishes.get(randomNum))) {
+            randomNum = rand.nextInt(generalDishes.size());
+        }
         currentDish = generalDishes.get(randomNum);
     }
 
     public void onSwipeRight(){
         likedDishes.add(currentDish);
+        System.out.println("------------------------------liked dishes " + likedDishes);
         updateCurrentDish();
         Intent i = new Intent(MainActivity.this, MatchDisplay.class);
-        i.putExtra("matched_dish", currentDish);
+        i.putExtra("matchedList", likedDishes);
         startActivity(i);
+
     }
 
     public void onSwipeLeft(){
         dislikedDishes.add(currentDish);
         updateCurrentDish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override

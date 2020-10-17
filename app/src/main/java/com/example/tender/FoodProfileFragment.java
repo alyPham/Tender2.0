@@ -77,7 +77,8 @@ public class FoodProfileFragment extends Fragment {
         blurb.setText(currentDish.getBlurb());
         priceAndDistance.setText(currentDish.getPriceAndDistance());
         if (currentDish.getBytes().length > 1) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(currentDish.getBytes(), 0, currentDish.getBytes().length);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(currentDish.getBytes(),
+                    0, currentDish.getBytes().length);
             imageView.setImageBitmap(bitmap);
         }
     }

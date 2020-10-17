@@ -15,7 +15,6 @@
         android:layout_marginLeft="38dp"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/ropa_sans"
-        android:text="Onion Rings"
         android:textColor="#404040"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/onion_rings" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/text_mask"
@@ -47,7 +45,6 @@
         android:fontFamily="@font/trebuchet"
         android:gravity="bottom"
         android:padding="12dp"
-        android:text="Perfect for any millennial, minus the self-deprecating humor. #relatable # trendy"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/dishimage"
@@ -60,7 +57,6 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:fontFamily="@font/trebuchet"
-        android:text="$4.75 | 3.5 miles"
         android:textColor="#404040"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishname" />
