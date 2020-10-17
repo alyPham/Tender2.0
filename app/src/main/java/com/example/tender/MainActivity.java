@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton homeButton;
     ImageButton matchButton;
-    ImageButton moreInfo;
 
     Random rand;
 
@@ -58,20 +57,11 @@ public class MainActivity extends AppCompatActivity {
 
         homeButton = findViewById(R.id.homebutton);
         matchButton = findViewById(R.id.matchbutton);
-//        moreInfo = findViewById(R.id.MoreInfo);
-//        moreInfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (currentFragment == foodProfileFragment){
-//                    moreInfo.set
-//                }
-//            }
-//        });
 
         dishManager = new DishManager();
         restaurantManager = new RestaurantManager();
         generalDishes = new ArrayList<>();
-//        likedDishes = new ArrayList<>();
+        likedDishes = new ArrayList<>();
         dislikedDishes = new ArrayList<>();
 
         rand = new Random();
@@ -87,12 +77,52 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //TODO: Implement this method and all the other dietary restrictions
-    public void cleanGeneralDishesForDiaryFree(){
-        for (Dish i:generalDishes){
-//            if (!i.getDF()){
+
+//    LongTermRelationship(){
+//        for (Dish i:generalDishes){
+//           if  i.getRestaurant().getDineIn().equals("no") {
 //                generalDishes.remove(i);
 //            }
+//        }
+//    }
+
+//    public void editDietaryRestrictions(){
+//        for (Dish dish:generalDishes){
+//            if (user.getGF = "y"){
+//                onGlutenFree(dish);
+//            }
+//            if (user.getDF = "y"){
+//                onDietaryFree(dish);
+//            }
+//        }
+//    }
+
+    public void retrieveUserInfo(){
+
+    }
+
+    //TODO: Implement this method and all the other dietary restrictions
+    public void deleteGluten(Dish dish){
+        if (dish.getGlutenFree().equals("n")){
+            generalDishes.remove(dish);
+        }
+    }
+
+    public void deleteDairy(Dish dish){
+        if (dish.getDairyFree().equals("n")){
+            generalDishes.remove(dish);
+        }
+    }
+
+    public void deleteNonVegetarian(Dish dish){
+        if (dish.getVegetarian().equals("n")){
+            generalDishes.remove(dish);
+        }
+    }
+
+    public void deleteNonVegan(Dish dish){
+        if (dish.getVegan().equals("n")){
+            generalDishes.remove(dish);
         }
     }
 

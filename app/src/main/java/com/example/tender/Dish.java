@@ -9,6 +9,10 @@ public class Dish implements Parcelable{
     private String blurb;
     private Restaurant restaurant;
     private String priceAndDistance;
+    private String glutenFree;
+    private String dairyFree;
+    private String vegetarian;
+    private String vegan;
 
     public Dish(){
         bytes = new byte[1];
@@ -16,14 +20,24 @@ public class Dish implements Parcelable{
         blurb = "default blurb";
         priceAndDistance = "default price";
         restaurant = new Restaurant();
+        glutenFree = "n";
+        dairyFree = "n";
+        vegetarian = "n";
+        vegan = "n";
     }
 
-    public Dish(byte[] bytes, String name, String blurb, String priceAndDistance, Restaurant restaurant){
+
+    public Dish(byte[] bytes, String name, String blurb, String priceAndDistance, Restaurant restaurant,
+                String glutenFree, String dairyFree, String vegetarian, String vegan){
         this.bytes = bytes;
         this.name = name;
         this.blurb = blurb;
         this.priceAndDistance = priceAndDistance;
         this.restaurant = restaurant;
+        this.glutenFree = glutenFree;
+        this.dairyFree = dairyFree;
+        this.vegetarian = vegetarian;
+        this.vegan = vegan;
     }
 
     protected Dish(Parcel in) {
@@ -32,6 +46,10 @@ public class Dish implements Parcelable{
         blurb = in.readString();
         restaurant = in.readParcelable(Restaurant.class.getClassLoader());
         priceAndDistance = in.readString();
+        glutenFree = in.readString();
+        dairyFree = in.readString();
+        vegetarian = in.readString();
+        vegan = in.readString();
     }
 
     public static final Creator<Dish> CREATOR = new Creator<Dish>() {
@@ -45,6 +63,33 @@ public class Dish implements Parcelable{
             return new Dish[size];
         }
     };
+
+    public String getDairyFree() {
+        return dairyFree;
+    }
+
+    public void setDairyFree(String dairyFree) {
+        this.dairyFree = dairyFree;
+    }
+
+    public String getVegetarian() {
+        return vegetarian;
+    }
+
+    public void setVegetarian(String vegetarian) {
+        this.vegetarian = vegetarian;
+    }
+
+    public String getVegan() {
+        return vegan;
+    }
+
+    public void setVegan(String vegan) {
+        this.vegan = vegan;
+    }
+
+    public void setGlutenFree(String glutenFree){this.glutenFree = glutenFree;}
+    public String getGlutenFree(){return glutenFree;}
 
     public void setBytes(byte[] bytes){
         this.bytes = bytes;
@@ -79,6 +124,7 @@ public class Dish implements Parcelable{
         return restaurant;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -91,5 +137,9 @@ public class Dish implements Parcelable{
         dest.writeString(blurb);
         dest.writeParcelable(restaurant, flags);
         dest.writeString(priceAndDistance);
+        dest.writeString(glutenFree);
+        dest.writeString(dairyFree);
+        dest.writeString(vegetarian);
+        dest.writeString(vegan);
     }
 }
