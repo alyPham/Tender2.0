@@ -27,10 +27,10 @@ public class MatchDisplay extends AppCompatActivity {
         Toast.makeText(this, "matched!", Toast.LENGTH_SHORT).show();
         home = findViewById(R.id.home_matched);
 
-        if (getIntent().hasExtra("matchedList")) { // prevents NullPointerException
-            getIntent().getExtra
-
-        }
+//        if (getIntent().hasExtra("matchedList")) { // prevents NullPointerException
+//            getIntent().getExtra
+//
+//        }
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override

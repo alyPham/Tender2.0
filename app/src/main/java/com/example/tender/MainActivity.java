@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("------------------------------liked dishes " + likedDishes);
         updateCurrentDish();
         Intent i = new Intent(MainActivity.this, MatchDisplay.class);
-        i.putExtra("matchedList", likedDishes);
+//        i.putExtra("matchedList", likedDishes);
         startActivity(i);
 
     }
