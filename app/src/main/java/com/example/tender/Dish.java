@@ -55,7 +55,7 @@ public class Dish implements Parcelable{
     }
 
     public void setBlurb(String blurb){
-        this.name = name;
+        this.blurb = blurb;
     }
 
     public void setPriceAndDistance(String priceAndDistance){this.priceAndDistance = priceAndDistance;}

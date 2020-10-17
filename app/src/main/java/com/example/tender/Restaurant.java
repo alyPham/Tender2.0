@@ -25,7 +25,7 @@ public class Restaurant implements Parcelable {
     }
 
     public Restaurant(String name,
-                      String daysAndHours,
+                      String hours,
                       String dineIn,
                       String takeOut,
                       String delivery,
@@ -33,7 +33,7 @@ public class Restaurant implements Parcelable {
                       String phoneNum,
                       String distance){
         this.name = name;
-        this.daysAndHours = daysAndHours;
+        this.daysAndHours = hours;
         this.dineIn = dineIn;
         this.takeOut = takeOut;
         this.delivery = delivery;
