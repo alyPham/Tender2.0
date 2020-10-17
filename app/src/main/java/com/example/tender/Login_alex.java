@@ -21,7 +21,7 @@ public class Login_alex extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(this, ));
+//                startActivity(new Intent(this, MainActivity.class));
             }
         });
     }
