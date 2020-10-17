@@ -17,9 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseUser;
 
-public class SignUp extends AppCompatActivity implements  View.OnClickListener {
+public class SignUp_alex extends AppCompatActivity implements  View.OnClickListener {
     ProgressBar progressBar;
 
     EditText editTextEmail, editTextPassword;
@@ -29,7 +28,7 @@ public class SignUp extends AppCompatActivity implements  View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
+        setContentView(R.layout.sign_up_alex);
         signUp = findViewById(R.id.SignUpButton);
         login = findViewById(R.id.backToLogin);
         editTextEmail = findViewById(R.id.Email);
@@ -97,7 +96,7 @@ public class SignUp extends AppCompatActivity implements  View.OnClickListener {
                 break;
 
             case R.id.backToLogin:
-                startActivity(new Intent(this, Login.class));
+                startActivity(new Intent(this, Login_alex.class));
                 break;
         }
     }

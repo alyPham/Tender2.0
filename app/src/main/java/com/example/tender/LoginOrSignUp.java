@@ -2,7 +2,6 @@ package com.example.tender;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -23,7 +22,7 @@ public class LoginOrSignUp extends AppCompatActivity {
         user_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginOrSignUp.this, Login.class);
+                Intent intent = new Intent(LoginOrSignUp.this, Login_alex.class);
                 startActivity(intent);
                 finish();
             }
@@ -32,7 +31,7 @@ public class LoginOrSignUp extends AppCompatActivity {
         user_SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginOrSignUp.this, SignUp.class);
+                Intent intent = new Intent(LoginOrSignUp.this, SignUp_alex.class);
                 startActivity(intent);
                 finish();
             }
