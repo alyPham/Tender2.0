@@ -80,10 +80,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.126" />
 
     <CheckBox
         android:id="@+id/veganBox"
@@ -96,10 +96,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vegetarianBox"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <CheckBox
         android:id="@+id/dairyBox"
@@ -112,32 +112,16 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/veganBox"
-        app:layout_constraintVertical_bias="0.109" />
-
-    <CheckBox
-        android:id="@+id/fishBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/trebuchet"
-        android:onClick="onCheckboxClicked"
-        android:text="Fish-Free"
-        android:textColor="#BF575656"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.269"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glutenBox"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <CheckBox
         android:id="@+id/glutenBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="112dp"
         android:fontFamily="@font/trebuchet"
         android:onClick="onCheckboxClicked"
         android:text="Gluten-Free"
@@ -145,26 +129,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nutBox"
-        app:layout_constraintVertical_bias="0.149" />
-
-    <CheckBox
-        android:id="@+id/nutBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/trebuchet"
-        android:onClick="onCheckboxClicked"
-        android:text="Nut-Free"
-        android:textColor="#BF575656"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dairyBox"
-        app:layout_constraintVertical_bias="0.136" />
+        app:layout_constraintVertical_bias="0.539" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -173,10 +141,10 @@
         android:src="@drawable/carrot2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toEndOf="@+id/vegetarianBox"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -184,11 +152,11 @@
         android:layout_height="177dp"
         android:src="@drawable/leaf"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toEndOf="@+id/vegetarianBox"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintVertical_bias="0.201" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -196,47 +164,24 @@
         android:layout_height="88dp"
         android:src="@drawable/milk"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintVertical_bias="0.465" />
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="87dp"
-        android:layout_height="143dp"
+        android:layout_width="96dp"
+        android:layout_height="151dp"
+        android:layout_marginBottom="100dp"
         android:src="@drawable/wheat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toEndOf="@+id/glutenBox"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="143dp"
-        android:layout_height="103dp"
-        android:src="@drawable/nut"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/nutBox"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.491" />
-
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="152dp"
-        android:layout_height="188dp"
-        android:src="@drawable/fish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/fishBox"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.827" />
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/divider"
@@ -254,8 +199,8 @@
         android:id="@+id/back_button"
         android:layout_width="54dp"
         android:layout_height="50dp"
-        android:rotation="180"
         android:onClick="goBack"
+        android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"

@@ -12,9 +12,7 @@ public class DietaryPage extends AppCompatActivity{
         boolean isVegetarian = false;
         boolean isVegan = false;
         boolean hasDairyAllergy = false;
-        boolean hasNutAllergy = false;
         boolean hasGlutenAllergy = false;
-        boolean hasFishAllergy = false;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +36,9 @@ public class DietaryPage extends AppCompatActivity{
                     if(checked){
                         hasDairyAllergy = true;
                     }
-                case R.id.nutBox:
-                    if(checked){
-                        hasNutAllergy = true;
-                    }
                 case R.id.glutenBox:
                     if(checked){
                         hasGlutenAllergy = true;
-                    }
-                case R.id.fishBox:
-                    if(checked){
-                        hasFishAllergy = true;
                     }
             }
         }
