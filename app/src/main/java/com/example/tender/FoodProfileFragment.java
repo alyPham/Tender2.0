@@ -28,7 +28,6 @@ public class FoodProfileFragment extends Fragment {
     private TextView delivery;
 
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +61,7 @@ public class FoodProfileFragment extends Fragment {
         super.setArguments(args);
         if (args != null){
             currentDish = args.getParcelable("currentDish");
+            System.out.println("----------------------------------currentDish in food profile fragment" + (currentDish.getBytes().length));
             setFoodProfile();
         }
     }
@@ -73,9 +73,9 @@ public class FoodProfileFragment extends Fragment {
         restaurant.setText(currentDish.getRestaurant().getName());
         hours.setText(currentDish.getRestaurant().getDaysAndHours());
         dineIn.setText(currentDish.getRestaurant().getDineIn());
-        System.out.println(currentDish.getRestaurant().getTakeOut());
         takeOut.setText(currentDish.getRestaurant().getTakeOut());
         delivery.setText(currentDish.getRestaurant().getDelivery());
+        System.out.println("----------------------------------currentdish image in display: " + currentDish.getBytes().length);
 
         if (currentDish.getBytes().length > 1) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(currentDish.getBytes(),

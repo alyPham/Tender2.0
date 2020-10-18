@@ -24,6 +24,8 @@ public class DishManager {
 
     public DishManager(){
         db = FirebaseFirestore.getInstance();
+        StorageReference url = FirebaseStorage.getInstance().
+                getReferenceFromUrl("gs://tender2-74c0e.appspot.com/test_alex/Cookie and Cream Milkshake.jpg");
 //        storageReference = FirebaseStorage.getInstance().getReference()
 //                .child("test_alex/Avocado Toast.jpg");
 //        storageReference = FirebaseStorage.getInstance().getReference().child("test_alex");
@@ -77,10 +79,11 @@ public class DishManager {
                     String ref = "test_alex/" + dish.getName() + ".jpg";
                     System.out.println(ref);
                     storageReference = FirebaseStorage.getInstance().getReference().child(ref);
-//                    setDishImage(dish, storageReference);
+
+                    setDishImage(dish, storageReference);
+                    System.out.println("----------------------------after set dish image" + dish.getBytes().length);
                     dishes.add(dish);
                     function.apply(dishes);
-
                 }
             }
         });
@@ -92,8 +95,9 @@ public class DishManager {
                 .addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
+                System.out.println(storageReference);
                 dish.setBytes(bytes);
-                System.out.println("-----------------------got some image!");
+                System.out.println("-----------------------got some image for " + dish.getName() + " " + (dish.getBytes().length));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
