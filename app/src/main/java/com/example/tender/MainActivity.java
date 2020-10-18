@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 //                if (generalDishes.get(0).getBytes().length > 1) {
                     updateCurrentDish();
 //                    if (currentDish.getBytes().length > 1)
-                System.out.println(currentDish.getBytes().length);
                     passCurrentDishProfile(foodProfileFragment);
 //                }
             }
@@ -157,8 +156,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void passCurrentDishProfile(Fragment fragment){
-        System.out.println("------------------------------sending currentDish" +
-                (currentDish.getBytes().length));
         Bundle bundle = new Bundle();
         bundle.putParcelable("currentDish", currentDish);
         fragment.setArguments(bundle);

@@ -61,7 +61,6 @@ public class FoodProfileFragment extends Fragment {
         super.setArguments(args);
         if (args != null){
             currentDish = args.getParcelable("currentDish");
-            System.out.println("----------------------------------currentDish in food profile fragment" + (currentDish.getBytes().length));
             setFoodProfile();
         }
     }
@@ -75,7 +74,6 @@ public class FoodProfileFragment extends Fragment {
         dineIn.setText(currentDish.getRestaurant().getDineIn());
         takeOut.setText(currentDish.getRestaurant().getTakeOut());
         delivery.setText(currentDish.getRestaurant().getDelivery());
-        System.out.println("----------------------------------currentdish image in display: " + currentDish.getBytes().length);
 
         if (currentDish.getBytes().length > 1) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(currentDish.getBytes(),

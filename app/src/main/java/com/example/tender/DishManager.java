@@ -17,7 +17,7 @@ import java.util.Map;
 
 
 public class DishManager {
-    final long ONE_MEGABYTE = 1024*1024;
+    final long ONE_MEGABYTE = 1024*1024*5;
     FirebaseFirestore db;
     private List<Dish> dishes;
     StorageReference storageReference;
@@ -76,12 +76,12 @@ public class DishManager {
                     dish.setDairyFree(snapshot.get("df").toString());
                     dish.setVegetarian(snapshot.get("v").toString());
                     dish.setVegan(snapshot.get("vg").toString());
-                    String ref = "test_alex/" + dish.getName() + ".jpg";
-                    System.out.println(ref);
+                    System.out.println("-----------------------Dish Name: " + dish.getName());
+                    String ref = "public/" + dish.getName() + ".png";
+                    System.out.println("------------------------reference: " + ref);
                     storageReference = FirebaseStorage.getInstance().getReference().child(ref);
 
                     setDishImage(dish, storageReference);
-                    System.out.println("----------------------------after set dish image" + dish.getBytes().length);
                     dishes.add(dish);
                     function.apply(dishes);
                 }
@@ -97,7 +97,6 @@ public class DishManager {
             public void onSuccess(byte[] bytes) {
                 System.out.println(storageReference);
                 dish.setBytes(bytes);
-                System.out.println("-----------------------got some image for " + dish.getName() + " " + (dish.getBytes().length));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
