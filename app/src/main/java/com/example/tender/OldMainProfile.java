@@ -46,9 +46,9 @@ public class OldMainProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.food_profile);
+//        setContentView(R.layout.food_profile);
 
-        moreInfo = findViewById(R.id.MoreInfo);
+//        moreInfo = findViewById(R.id.MoreInfo);
         moreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -52,7 +52,7 @@ public class DishManager {
                         String dineIn = ((Map<String, String>) snapshot.get("restaurant")).
                                 get("dine in");
                         String pickup = ((Map<String, String>) snapshot.get("restaurant")).
-                                get("pickup");
+                                get("takeout");
                         String website = ((Map<String, String>) snapshot.get("restaurant")).
                                 get("website");
                         String phoneNum = ((Map<String, String>) snapshot.get("restaurant")).
