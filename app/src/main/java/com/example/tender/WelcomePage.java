@@ -15,7 +15,7 @@ public class WelcomePage extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent touchEvent) {
         if (touchEvent.getAction() == MotionEvent.ACTION_UP){
-            Intent i = new Intent(WelcomePage.this, MainActivity.class);
+            Intent i = new Intent(WelcomePage.this, LoginOrSignUp.class);
             startActivity(i);
         }
         return false;
