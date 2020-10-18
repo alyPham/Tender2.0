@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager;
     Fragment foodProfileFragment;
-    Fragment moreInfoFragment;
     Fragment currentFragment;
 
     ImageButton homeButton;
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         foodProfileFragment = new FoodProfileFragment();
-        moreInfoFragment = new MoreInfoFragment();
 
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

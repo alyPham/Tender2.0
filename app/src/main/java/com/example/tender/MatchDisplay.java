@@ -37,7 +37,6 @@ public class MatchDisplay extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
                 Intent openMainActivity = new Intent(MatchDisplay.this, MainActivity.class);
-                openMainActivity.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(openMainActivity);
             }
         }
