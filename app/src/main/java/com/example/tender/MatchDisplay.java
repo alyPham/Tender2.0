@@ -4,21 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Arrays;
 
 public class MatchDisplay extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     ImageButton home;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +20,7 @@ public class MatchDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_match_page);
         Toast.makeText(this, "matched!", Toast.LENGTH_SHORT).show();
         home = findViewById(R.id.home_matched);
+        back = findViewById(R.id.back_button4);
 
 //        if (getIntent().hasExtra("matchedList")) { // prevents NullPointerException
 //            getIntent().getExtra
@@ -36,11 +31,17 @@ public class MatchDisplay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                Intent openMainActivity = new Intent(MatchDisplay.this, MainActivity.class);
+                Intent openMainActivity = new Intent(MatchDisplay.this, NewUserPage.class);
                 startActivity(openMainActivity);
             }
         }
         );
+
+    }
+
+    public void goBack(View view){
+        Intent i = new Intent(MatchDisplay.this, MainActivity.class);
+        startActivity(i);
 
     }
 

@@ -18,6 +18,7 @@
         android:background="#00f5f5f5"
         android:contentDescription="@string/home_button"
         android:scaleType="fitCenter"
+        android:onClick="goBackHome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/home" />
@@ -31,6 +32,7 @@
         android:background="#00f5f5f5"
         android:contentDescription="@string/matches"
         android:scaleType="fitStart"
+        android:onClick="goToMatch"
         app:layout_constraintBottom_toBottomOf="@+id/homebutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/homebutton"

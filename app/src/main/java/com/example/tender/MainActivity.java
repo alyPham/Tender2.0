@@ -192,4 +192,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
     }
+
+    public void goBackHome(View view){
+        Intent i = new Intent(MainActivity.this, NewUserPage.class);
+        startActivity(i);
+    }
+
+    public void goToMatch(View view){
+        Intent i = new Intent(MainActivity.this, MatchDisplay.class);
+        startActivity(i);
+    }
 }
