@@ -11,18 +11,21 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class FoodProfileFragment extends Fragment {
     private Dish currentDish;
-    private Fragment moreInfoFragment;
+
     private ImageView imageView;
-//    private ImageButton moreInfo;
     private TextView dishName;
     private TextView priceAndDistance;
+    private TextView restaurant;
     private TextView blurb;
+    private TextView hours;
+    private TextView dineIn;
+    private TextView takeOut;
+    private TextView delivery;
 
 
     @Override
@@ -38,25 +41,15 @@ public class FoodProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food_profile, container, false);
-
         dishName = view.findViewById(R.id.dishname);
-        // TODO: delete moreInfo
-//        moreInfo = view.findViewById(R.id.MoreInfo);
-        priceAndDistance = view.findViewById(R.id.price_and_distance);
         blurb = view.findViewById(R.id.blurb);
         imageView = view.findViewById(R.id.dishimage);
-
-        moreInfoFragment = new MoreInfoFragment();
-
-//        moreInfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.fragment_container, moreInfoFragment);
-//                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
-//            }
-//        });
+        restaurant = view.findViewById(R.id.restaurant);
+        priceAndDistance = view.findViewById(R.id.price_and_distance);
+        hours = view.findViewById(R.id.hours);
+        dineIn = view.findViewById(R.id.dine_in_option);
+        takeOut = view.findViewById(R.id.take_out_option);
+        delivery = view.findViewById(R.id.delivery_option);
 
 
         // Inflate the layout for this fragment
@@ -76,6 +69,12 @@ public class FoodProfileFragment extends Fragment {
         dishName.setText(currentDish.getName());
         blurb.setText(currentDish.getBlurb());
         priceAndDistance.setText(currentDish.getPriceAndDistance());
+        restaurant.setText(currentDish.getRestaurant().getName());
+        hours.setText(currentDish.getRestaurant().getDaysAndHours());
+        dineIn.setText(currentDish.getRestaurant().getDineIn());
+        takeOut.setText(currentDish.getRestaurant().getTakeOut());
+        delivery.setText(currentDish.getRestaurant().getDelivery());
+
         if (currentDish.getBytes().length > 1) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(currentDish.getBytes(),
                     0, currentDish.getBytes().length);

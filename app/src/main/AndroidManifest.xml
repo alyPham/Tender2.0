@@ -24,8 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MoreInfo" />
-        <activity android:name=".OldMainProfile" />
         <activity android:name=".NewUserPage" />
         <activity android:name=".DietaryPage" />
         <activity android:name=".GettingStartedPage" />

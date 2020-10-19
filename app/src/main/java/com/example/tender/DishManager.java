@@ -17,13 +17,15 @@ import java.util.Map;
 
 
 public class DishManager {
-    final long ONE_MEGABYTE = 1024*1024;
+    final long ONE_MEGABYTE = 1024*1024*5;
     FirebaseFirestore db;
     private List<Dish> dishes;
     StorageReference storageReference;
 
     public DishManager(){
         db = FirebaseFirestore.getInstance();
+        StorageReference url = FirebaseStorage.getInstance().
+                getReferenceFromUrl("gs://tender2-74c0e.appspot.com/test_alex/Cookie and Cream Milkshake.jpg");
 //        storageReference = FirebaseStorage.getInstance().getReference()
 //                .child("test_alex/Avocado Toast.jpg");
 //        storageReference = FirebaseStorage.getInstance().getReference().child("test_alex");
@@ -52,7 +54,7 @@ public class DishManager {
                         String dineIn = ((Map<String, String>) snapshot.get("restaurant")).
                                 get("dine in");
                         String pickup = ((Map<String, String>) snapshot.get("restaurant")).
-                                get("pickup");
+                                get("takeout");
                         String website = ((Map<String, String>) snapshot.get("restaurant")).
                                 get("website");
                         String phoneNum = ((Map<String, String>) snapshot.get("restaurant")).
@@ -74,13 +76,14 @@ public class DishManager {
                     dish.setDairyFree(snapshot.get("df").toString());
                     dish.setVegetarian(snapshot.get("v").toString());
                     dish.setVegan(snapshot.get("vg").toString());
-                    String ref = "test_alex/" + dish.getName() + ".jpg";
-                    System.out.println(ref);
+                    System.out.println("-----------------------Dish Name: " + dish.getName());
+                    String ref = "public/" + dish.getName() + ".png";
+                    System.out.println("------------------------reference: " + ref);
                     storageReference = FirebaseStorage.getInstance().getReference().child(ref);
-//                    setDishImage(dish, storageReference);
+
+                    setDishImage(dish, storageReference);
                     dishes.add(dish);
                     function.apply(dishes);
-
                 }
             }
         });
@@ -92,8 +95,8 @@ public class DishManager {
                 .addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
+                System.out.println(storageReference);
                 dish.setBytes(bytes);
-                System.out.println("-----------------------got some image!");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
