@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,20 +35,20 @@ public class Relationship extends AppCompatActivity {
         if(!longTerm && !hookUp) {
             longTerm = true;
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
-            mDatabase.child("profile").child("user1").child("relationship").child("longTerm").setValue("y");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("longTerm").setValue("y");
         }
         else if(longTerm && !hookUp){
             longTerm = false;
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child("user1").child("relationship").child("longTerm").setValue("n");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("longTerm").setValue("n");
         }
         else if(hookUp){
             longTerm = true;
             hookUp = false;
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child("user1").child("relationship").child("longTerm").setValue("y");
-            mDatabase.child("profile").child("user1").child("relationship").child("hookUp").setValue("n");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("longTerm").setValue("y");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("hookUp").setValue("n");
         }
     }
 
@@ -55,20 +56,20 @@ public class Relationship extends AppCompatActivity {
         if(!longTerm && !hookUp) {
             hookUp = true;
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
-            mDatabase.child("profile").child("user1").child("relationship").child("hookUp").setValue("y");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("hookUp").setValue("y");
         }
         else if(!longTerm && hookUp){
             hookUp = false;
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child("user1").child("relationship").child("hookUp").setValue("n");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("hookUp").setValue("n");
         }
         else if(longTerm){
             hookUp = true;
             longTerm = false;
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child("user1").child("relationship").child("longTerm").setValue("n");
-            mDatabase.child("profile").child("user1").child("relationship").child("hookUp").setValue("y");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("longTerm").setValue("n");
+            mDatabase.child("profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("relationship").child("hookUp").setValue("y");
         }
     }
 
