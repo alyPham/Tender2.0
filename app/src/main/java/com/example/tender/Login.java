@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
 
         mPassword = (EditText) findViewById(R.id.password);
 
-        mProgressbar = (ProgressBar) findViewById(R.id.progressbar);
+        mProgressbar = (ProgressBar) findViewById(R.id.progressbar_login);
 
         mAuth = FirebaseAuth.getInstance();
 
