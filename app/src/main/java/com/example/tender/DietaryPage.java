@@ -7,17 +7,20 @@ import android.widget.CheckBox;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class DietaryPage extends AppCompatActivity{
 
-        boolean isVegetarian = false;
-        boolean isVegan = false;
-        boolean hasDairyAllergy = false;
-        boolean hasGlutenAllergy = false;
+        private DatabaseReference mDatabase;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.dietary_restrictions);
+
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+
         }
 
         public void onCheckboxClicked(View view){
@@ -26,20 +29,32 @@ public class DietaryPage extends AppCompatActivity{
             switch(view.getId()){
                 case R.id.vegetarianBox:
                     if(checked){
-                       isVegetarian = true;
+                       mDatabase.child("profile").child("user1").child("dietary restrictions").child("v").setValue("y");
+                    } else {
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("v").setValue("n");
                     }
+                    break;
                 case R.id.veganBox:
                     if(checked) {
-                        isVegan = true;
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("vg").setValue("y");
+                    } else {
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("vg").setValue("n");
                     }
+                    break;
                 case R.id.dairyBox:
                     if(checked){
-                        hasDairyAllergy = true;
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("df").setValue("y");
+                    } else {
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("df").setValue("n");
                     }
+                    break;
                 case R.id.glutenBox:
                     if(checked){
-                        hasGlutenAllergy = true;
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("gf").setValue("y");
+                    } else {
+                        mDatabase.child("profile").child("user1").child("dietary restrictions").child("gf").setValue("n");
                     }
+                    break;
             }
         }
         public void goBack(View view){
