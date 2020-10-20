@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     List<Dish> generalDishes;
     List<Dish> likedDishes;
     List<Dish> dislikedDishes;
-
+    List<Dish> customizedDishes;
     Dish currentDish;
 
     FragmentManager fragmentManager;
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             Collections.shuffle(generalDishes);
 
             if (generalDishes.size() == LOAD_SIZE && currentDish == null){
+                
 //                if (generalDishes.get(0).getBytes().length > 1) {
                     updateCurrentDish();
 //                    if (currentDish.getBytes().length > 1)

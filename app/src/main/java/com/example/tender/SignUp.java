@@ -37,7 +37,7 @@ public class SignUp extends AppCompatActivity {
         mRegister = (Button) findViewById(R.id.register_button);
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
-        mProgressbar = (ProgressBar) findViewById(R.id.progressbar);
+        mProgressbar = (ProgressBar) findViewById(R.id.progressbar_signup);
 
 //      If user click register, add the new user in fire base. If not, print out an error message
         mRegister.setOnClickListener(new View.OnClickListener() {

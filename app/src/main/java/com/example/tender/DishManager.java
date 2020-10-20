@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
 public class DishManager {
     final long ONE_MEGABYTE = 1024*1024*5;
     FirebaseFirestore db;
@@ -95,7 +94,6 @@ public class DishManager {
                 .addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
-                System.out.println(storageReference);
                 dish.setBytes(bytes);
             }
         }).addOnFailureListener(new OnFailureListener() {

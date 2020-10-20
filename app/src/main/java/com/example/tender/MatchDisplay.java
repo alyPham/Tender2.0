@@ -24,7 +24,6 @@ public class MatchDisplay extends AppCompatActivity {
 
 //        if (getIntent().hasExtra("matchedList")) { // prevents NullPointerException
 //            getIntent().getExtra
-//
 //        }
 
         home.setOnClickListener(new View.OnClickListener() {
