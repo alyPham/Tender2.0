@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".FirstFragment">
+    tools:context=".LoginOrSignUp">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="321dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:text="Welcome to Tender!"
         android:textColor="#F0575454"
@@ -19,30 +19,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.241" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="317dp"
-        android:layout_height="38dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="How may I better serve you today?"
+        android:text="Table for one?"
         android:textColor="#BF575656"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <Button
         android:id="@+id/button_signup"
         android:layout_width="282dp"
         android:layout_height="52dp"
-        android:background="#F4BBBB"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/roboto_bold"
-        android:text="SIGNUP"
+        android:text="SIGN-UP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -54,15 +53,15 @@
         android:id="@+id/button_login"
         android:layout_width="282dp"
         android:layout_height="52dp"
-        android:background="#F4BBBB"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/roboto_bold"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -75,6 +74,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
