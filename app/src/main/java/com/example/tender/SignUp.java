@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
@@ -94,7 +93,7 @@ public class SignUp extends AppCompatActivity {
                                         Toast.makeText(SignUp.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
                                         mProgressbar.setVisibility(View.GONE);
 
-                                        Intent intent = new Intent(SignUp.this, NewUserPage.class);
+                                        Intent intent = new Intent(SignUp.this, UserSettingsPage.class);
                                         startActivity(intent);
                                         finish();
 

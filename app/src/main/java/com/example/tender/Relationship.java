@@ -96,7 +96,7 @@ public class Relationship extends AppCompatActivity {
     }
 
     public void goBack(View view){
-        Intent i = new Intent(Relationship.this, NewUserPage.class);
+        Intent i = new Intent(Relationship.this, UserSettingsPage.class);
         startActivity(i);
     }
 }

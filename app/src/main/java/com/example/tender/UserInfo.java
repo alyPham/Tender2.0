@@ -3,6 +3,8 @@ package com.example.tender;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 public class UserInfo implements Parcelable {
     public String email, password;
     public String v, vg, df, gf;
@@ -135,5 +137,11 @@ public class UserInfo implements Parcelable {
 
     public void setLongTerm(String longTerm) {
         this.longTerm = longTerm;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "v: " + v + "\nvg: " + vg + "\ndf:" + df + "\ngf: "+ gf + "\nhookUp: " + hookUp + "\nlongTerm: " + longTerm;
     }
 }

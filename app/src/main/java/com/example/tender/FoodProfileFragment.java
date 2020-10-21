@@ -13,6 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * The fragment displayed in the MainActivity fragment container. Receives the currentDish
+ * object passed by MainActivity and displays it on screen.
+ */
+
 public class FoodProfileFragment extends Fragment {
     private Dish currentDish;
 
@@ -64,6 +69,10 @@ public class FoodProfileFragment extends Fragment {
         }
     }
 
+    /**
+     * Displays the currentDish onto the screen. calls all the view objects and sets its
+     * content corresponding to currentDish.
+     */
     public void setFoodProfile(){
         dishName.setText(currentDish.getName());
         blurb.setText(currentDish.getBlurb());

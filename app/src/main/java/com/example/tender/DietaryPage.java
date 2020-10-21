@@ -1,7 +1,6 @@
 package com.example.tender;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -41,7 +40,7 @@ public class DietaryPage extends AppCompatActivity {
         dairyBox = findViewById(R.id.dairyBox);
         glutenBox = findViewById(R.id.glutenBox);
 
-        getPrefs = getSharedPreferences("preferences", Context.MODE_PRIVATE); //SharedPreferences allows you to store values that you can access later after exiting the activity
+        getPrefs = getSharedPreferences("preferences", MODE_PRIVATE); //SharedPreferences allows you to store values that you can access later after exiting the activity
         editor = getPrefs.edit();
 
         setReturningChecks();
@@ -64,14 +63,14 @@ public class DietaryPage extends AppCompatActivity {
                     vegetarianBox.setSelected(true);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":vegetarian", true);
-                    editor.commit();
+                    editor.apply();
                 } else {
                     mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
                             getCurrentUser()).getUid()).child("dietary restrictions").child("v").setValue("n");
                     vegetarianBox.setSelected(false);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":vegetarian", false);
-                    editor.commit();
+                    editor.apply();
                 }
                 break;
             case R.id.veganBox:
@@ -81,14 +80,14 @@ public class DietaryPage extends AppCompatActivity {
                     veganBox.setSelected(true);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":vegan", true);
-                    editor.commit();
+                    editor.apply();
                 } else {
                     mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
                             getCurrentUser()).getUid()).child("dietary restrictions").child("vg").setValue("n");
                     veganBox.setSelected(false);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":vegan", false);
-                    editor.commit();
+                    editor.apply();
                 }
                 break;
             case R.id.dairyBox:
@@ -98,14 +97,14 @@ public class DietaryPage extends AppCompatActivity {
                     dairyBox.setSelected(true);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":dairy", true);
-                    editor.commit();
+                    editor.apply();
                 } else {
                     mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
                             getCurrentUser()).getUid()).child("dietary restrictions").child("df").setValue("n");
                     dairyBox.setSelected(false);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":dairy", false);
-                    editor.commit();
+                    editor.apply();
                 }
                 break;
             case R.id.glutenBox:
@@ -115,14 +114,14 @@ public class DietaryPage extends AppCompatActivity {
                     glutenBox.setSelected(true);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":gluten", true);
-                    editor.commit();
+                    editor.apply();
                 } else {
                     mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
                             getCurrentUser()).getUid()).child("dietary restrictions").child("gf").setValue("n");
                     glutenBox.setSelected(false);
                     editor.putBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                             getInstance().getCurrentUser()).getUid()) + ":gluten", false);
-                    editor.commit();
+                    editor.apply();
                 }
                 break;
         }
@@ -153,7 +152,7 @@ public class DietaryPage extends AppCompatActivity {
     }
 
     public void goBack(View view) {
-        Intent i = new Intent(DietaryPage.this, NewUserPage.class);
+        Intent i = new Intent(DietaryPage.this, UserSettingsPage.class);
         startActivity(i);
     }
 

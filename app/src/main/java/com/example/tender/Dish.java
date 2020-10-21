@@ -3,6 +3,8 @@ package com.example.tender;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 public class Dish implements Parcelable{
     private byte[] bytes;
     private String name;
@@ -124,6 +126,21 @@ public class Dish implements Parcelable{
         return restaurant;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "name: " + this.name
+                + "\n priceAndDistance: " + this.priceAndDistance
+                + "\n blurb: " + this.blurb
+                + "\n glutenFree: " + glutenFree
+                + "\n vegan: " + vegan
+                + "\n vegetarian: " + vegetarian
+                + "\n dairyFree: " + dairyFree
+                + "\n glutenFree: "+ glutenFree
+                + "\n restaurantName: " + restaurant.getName()
+                + "\n restaurantHours: " + restaurant.getDaysAndHours()
+                + "\n restaurantDineIn: " + restaurant.getDineIn();
+    }
 
     @Override
     public int describeContents() {
