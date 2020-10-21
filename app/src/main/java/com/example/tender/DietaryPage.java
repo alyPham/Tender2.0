@@ -156,4 +156,9 @@ public class DietaryPage extends AppCompatActivity {
         Intent i = new Intent(DietaryPage.this, NewUserPage.class);
         startActivity(i);
     }
+
+    public SharedPreferences getSharedPrefs(){
+        return getPrefs;
+    }
 }
+

@@ -46,8 +46,9 @@ public class NewUserPage extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public UserInfo retrieveUserData(final Function<UserInfo, Void> function){
-        DatabaseReference vRef = mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
-                getCurrentUser()).getUid()).child("dietary restrictions").child("v");
+//        DatabaseReference vRef = mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+//                getCurrentUser()).getUid()).child("dietary restrictions").child("v");
+        DatabaseReference vRef = mDatabase.getRef();
         vRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

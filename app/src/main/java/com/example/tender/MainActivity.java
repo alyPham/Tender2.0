@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton homeButton;
     ImageButton matchButton;
 
+    DietaryPage dietaryPage;
+
     Random rand;
 
 
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         likedDishes = new ArrayList<>();
         dislikedDishes = new ArrayList<>();
 
+        dietaryPage = new DietaryPage();
         rand = new Random();
         
 
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (generalDishes.size() == LOAD_SIZE && currentDish == null){
 //                retrieveUserData();
-
+                editDietaryRestrictions();
                 updateCurrentDish();
                 passCurrentDishProfile(foodProfileFragment); // display dish data in food profile fragment
             }
@@ -103,18 +106,22 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-//    public void editDietaryRestrictions(){
-//        for (Dish dish:generalDishes){
-//            if (user.getGF = "y"){
-//                deleteGluten(dish);
-//            }
-//            if (user.getDF = "y"){
-//                onDietaryFree(dish);
-//            }
-//            if
-//                deleteNonVegetarian             );
-//        }
-//    }
+    public void editDietaryRestrictions(){
+        for (Dish dish:generalDishes){
+            if (dietaryPage.getPrefs.getBoolean("vegetarian", true)){
+                deleteNonVegetarian(dish);
+            }
+            if (dietaryPage.getPrefs.getBoolean("vegan", true)){
+                deleteNonVegan(dish);
+            }
+            if(dietaryPage.getPrefs.getBoolean("dairy", true)){
+                deleteDairy(dish);
+            }
+            if(dietaryPage.getPrefs.getBoolean("gluten", true)){
+                deleteGluten(dish);
+            }
+        }
+    }
 
     public void retrieveUserInfo(){
 
