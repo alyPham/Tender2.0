@@ -36,41 +36,51 @@ public class GettingStartedPage extends AppCompatActivity {
         addExplanations();
     }
 
-        public void nextSlide(View view){
+    /**
+     * Allows the user to click through the tutorial's images and explanations.
+     * @param view
+     */
+    public void nextSlide(View view) {
 
-            int temp = imageList.get(0);
-            String temp2 = explanationList.get(0);
+        int temp = imageList.get(0);
+        String temp2 = explanationList.get(0);
 
-            imageView.setImageResource(temp);
-            textView.setText(temp2);
+        imageView.setImageResource(temp);
+        textView.setText(temp2);
 
-            moveToBack(temp, temp2);
+        moveToBack(temp, temp2);
     }
 
 
-        public void goBack(View view){
-            Intent i = new Intent(GettingStartedPage.this, NewUserPage.class);
-            startActivity(i);
-        }
-
-        public void addImages(){
-            imageList.add(R.drawable.food_profile_swipe_example);
-            imageList.add(R.drawable.food_profile_info_example);
-            imageList.add(R.drawable.food_profile_home_example);
-            imageList.add(R.drawable.food_profile_match_example);
-        }
-
-        public void addExplanations(){
-            explanationList.add("Swipe left to dislike, swipe right to like.");
-            explanationList.add("Dish and corresponding restaurant information.");
-            explanationList.add("Click to return to home screen/user settings.");
-            explanationList.add("Click to view all dishes you've matched with.");
-        }
-
-        public void moveToBack(int temp, String temp2){
-            imageList.remove(0);
-            explanationList.remove(0);
-            imageList.add(temp);
-            explanationList.add(temp2);
-        }
+    public void goBack(View view) {
+        Intent i = new Intent(GettingStartedPage.this, NewUserPage.class);
+        startActivity(i);
     }
+
+    public void addImages() {
+        imageList.add(R.drawable.food_profile_info_example);
+        imageList.add(R.drawable.food_profile_home_example);
+        imageList.add(R.drawable.food_profile_match_example);
+        imageList.add(R.drawable.food_profile_swipe_example);
+    }
+
+    public void addExplanations() {
+        explanationList.add("Dish and corresponding restaurant information.");
+        explanationList.add("Click to return to home screen/user settings.");
+        explanationList.add("Click to view all dishes you've matched with.");
+        explanationList.add("Swipe left to dislike, swipe right to like.");
+    }
+
+    /**
+     * Once a user moves on to the next image-explanation pair, it removes the previous pair and
+     * re-adds it to the back of the list to ensure a cycle.
+     * @param temp
+     * @param temp2
+     */
+    public void moveToBack(int temp, String temp2) {
+        imageList.remove(0);
+        explanationList.remove(0);
+        imageList.add(temp);
+        explanationList.add(temp2);
+    }
+}

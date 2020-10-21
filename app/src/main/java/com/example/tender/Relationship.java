@@ -33,47 +33,65 @@ public class Relationship extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
+    /**
+     * Handles when the Long Term Button is pressed.
+     * @param view
+     */
     public void setLongTerm(View view){
-        if(!longTerm && !hookUp) {
+        if(!longTerm && !hookUp) { //if both buttons are not pressed
             longTerm = true;
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("y");
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("n");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("y");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("n");
         }
-        else if(longTerm && !hookUp){
+        else if(longTerm && !hookUp){ //undoes pressing the Long Term button
             longTerm = false;
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("n");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("n");
         }
-        else {
+        else { //if the Hook-Up button is already pressed, undo it, and then have the Long Term button be pressed
             longTerm = true;
             hookUp = false;
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("y");
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("n");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("y");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("n");
         }
     }
 
+    /**
+     * Handles when the Hook-Up Button is pressed.
+     * @param view
+     */
     public void setShortTerm(View view){
-        if(!longTerm && !hookUp) {
+        if(!longTerm && !hookUp) { //if both buttons are not pressed
             hookUp = true;
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("y");
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("n");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("y");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("n");
         }
-        else if(!longTerm){
+        else if(!longTerm){ //undoes pressing the Hook-Up button
             hookUp = false;
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("n");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("n");
         }
-        else {
+        else { //if the Long Term button is already pressed, undo it, and then have the Hook-Up button be pressed
             hookUp = true;
             longTerm = false;
             shortButton.setBackground(getResources().getDrawable(R.drawable.rounded_button_2));
             longButton.setBackground(getResources().getDrawable(R.drawable.rounded_button));
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("n");
-            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("y");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("longTerm").setValue("n");
+            mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().
+                    getCurrentUser()).getUid()).child("relationship").child("hookUp").setValue("y");
         }
     }
 
