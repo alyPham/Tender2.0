@@ -11,6 +11,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -80,12 +82,17 @@ public class DishManager {
                     storageReference = FirebaseStorage.getInstance().getReference().child(ref);
 
                     setDishImage(dish, storageReference);
+                    System.out.println("-------------------dish toString()" + dish.toString());
                     dishes.add(dish);
                     function.apply(dishes);
                 }
             }
         });
         return dishes;
+    }
+
+    public void writeDishIntoFile(File file){
+
     }
 
     public void setDishImage(final Dish dish, StorageReference storageReference) {

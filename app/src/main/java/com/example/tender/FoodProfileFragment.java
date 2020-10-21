@@ -65,7 +65,7 @@ public class FoodProfileFragment extends Fragment {
         super.setArguments(args);
         if (args != null){
             currentDish = args.getParcelable("currentDish");
-//            setFoodProfile();
+            setFoodProfile();
         }
     }
 
