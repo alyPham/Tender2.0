@@ -8,6 +8,10 @@ public class UserInfo implements Parcelable {
     public String v, vg, df, gf;
     public String hookUp, longTerm;
 
+    /**
+     * Creating constructors to save account information and user information
+     * that goes to realtime database in Firebase
+     */
     public UserInfo(){
 
     }

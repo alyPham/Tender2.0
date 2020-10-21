@@ -35,6 +35,9 @@ public class LoginOrSignUp extends AppCompatActivity {
         user_Login = (Button) findViewById(R.id.button_login);
         user_SignUp = (Button) findViewById(R.id.button_signup);
 
+        /**
+         * When user press Login button, directs to login page
+         */
         user_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,9 @@ public class LoginOrSignUp extends AppCompatActivity {
             }
         });
 
+        /**
+         * When user press SignUp button, directs to signUp page
+         */
         user_SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -44,38 +44,43 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        //User Click the button everything starts...
+        /**
+         * When user clicks the login button,
+         * check the following criteria and allow login with correct password and email address
+         */
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String email = mEmail.getText().toString().trim();
                 final String password = mPassword.getText().toString().trim();
 
-                if (email.isEmpty()){
+                if (email.isEmpty()){ //Check the email address is written or not. Print error statement
                     mEmail.setError("Email is required");
                     mEmail.requestFocus();
                     return;
                 }
 
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){ //check the email address is not in a correct format or not (@)
                     mEmail.setError("Please provide valid a email address");
                     mEmail.requestFocus();
                     return;
                 }
 
-                if (password.isEmpty()){
+                if (password.isEmpty()){ //Check password is typed or not. Print error statement
                     mPassword.setError("Password is required");
                     mPassword.requestFocus();
                     return;
                 }
 
-                if (password.length() < 6){
+                if (password.length() < 6){ //minimum number for password is 6 for Firebase
                     mPassword.setError("Password is at least 6 characters!");
                     mPassword.requestFocus();
                     return;
                 }
-                mProgressbar.setVisibility(View.VISIBLE);
+                mProgressbar.setVisibility(View.VISIBLE); // Progress bar is shown while app is working on the login.
 
+
+                //Sign in to the app using Firebase builtin method to log in
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
