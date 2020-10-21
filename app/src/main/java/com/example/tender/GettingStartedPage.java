@@ -63,8 +63,8 @@ public class GettingStartedPage extends AppCompatActivity {
         public void addExplanations(){
             explanationList.add("Swipe left to dislike, swipe right to like.");
             explanationList.add("Dish and corresponding restaurant information.");
-            explanationList.add("Button to return to Home page.");
-            explanationList.add("Button to redirect to Match page.");
+            explanationList.add("Click to return to home screen/user settings.");
+            explanationList.add("Click to view all dishes you've matched with.");
         }
 
         public void moveToBack(int temp, String temp2){

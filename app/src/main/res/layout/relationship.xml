@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="411dp"
-        android:layout_height="92dp"
+        android:layout_width="432dp"
+        android:layout_height="114dp"
         android:background="#F86868"
         android:fontFamily="@font/roboto_bold"
         android:textColor="#F0575454"
@@ -26,33 +26,33 @@
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/hero_light_bold"
         android:gravity="center"
         android:text="Relationship Type"
         android:textColor="#F0FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="@+id/textView17"
         app:layout_constraintTop_toTopOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="370dp"
         android:layout_height="59dp"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/hero_light_bold"
         android:gravity="center"
         android:text="What kind of match are you pursuing?"
-        android:textColor="#BF575656"
+        android:textColor="#F0615E5E"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/divider4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintVertical_bias="0.52" />
 
     <View
         android:id="@+id/divider4"
@@ -62,40 +62,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.269" />
 
     <Button
         android:id="@+id/longButton"
         android:layout_width="309dp"
         android:layout_height="59dp"
         android:background="@drawable/rounded_button"
+        android:fontFamily="@font/hero_light_bold"
         android:onClick="setLongTerm"
         android:text="Long-Term (Sit-In)"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/shortButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintTop_toBottomOf="@+id/divider4"
+        app:layout_constraintVertical_bias="0.643" />
 
     <Button
         android:id="@+id/shortButton"
         android:layout_width="309dp"
         android:layout_height="59dp"
+        android:layout_marginBottom="280dp"
         android:background="@drawable/rounded_button"
+        android:fontFamily="@font/hero_light_bold"
         android:onClick="setShortTerm"
         android:text="Hook-Up (Takeout/Fast-Food)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/longButton"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/back_button3"
         android:layout_width="54dp"
         android:layout_height="50dp"
-        android:rotation="180"
         android:onClick="goBack"
+        android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"

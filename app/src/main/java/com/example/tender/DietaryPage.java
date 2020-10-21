@@ -108,19 +108,19 @@ public class DietaryPage extends AppCompatActivity{
         }
 
 
-        public void setReturningChecks(){
-           if (getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":vegetarian", true)){
-               vegetarianBox.setChecked(true);
-           }
-           if (getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":vegan", true)){
-               veganBox.setChecked(true);
-           }
-           if(getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":dairy", true)){
-               dairyBox.setChecked(true);
-           }
-           if(getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":gluten", true)){
-               glutenBox.setChecked(true);
-           }
+        public void setReturningChecks() {
+            if (getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":vegetarian", true)) {
+                vegetarianBox.setChecked(true);
+            }
+            if (getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":vegan", true)) {
+                veganBox.setChecked(true);
+            }
+            if (getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":dairy", true)) {
+                dairyBox.setChecked(true);
+            }
+            if (getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()) + ":gluten", true)) {
+                glutenBox.setChecked(true);
+            }
         }
         public void goBack(View view){
             Intent i = new Intent(DietaryPage.this, NewUserPage.class);
