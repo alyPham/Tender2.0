@@ -24,4 +24,4 @@ Tender is a food-based application that parodies the famous online dating servic
 # Contributing
 - Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 
 - **IMPORTANT NOTE:** All dish/restaurant information was curated by hand and stored in Firebase. Cloud Firestore and Realtime Database were also utilized in the creation of this application to store and access user preferences to better curate what dish profiles were to be viewable. 
-- For extensive testing/changes, it is recommended you request access to our Firebase repository.
+- For extensive testing/changes, our Firebase repository is partially open to public; however, it is recommended you request access to our Firebase repository.
