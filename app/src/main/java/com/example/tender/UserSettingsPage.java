@@ -5,25 +5,16 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.view.View;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Objects;
-import java.util.function.Function;
 
 
-public class NewUserPage extends AppCompatActivity {
+public class UserSettingsPage extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private String df, gf, v, vg;
     private String hookUp, longTerm;
@@ -136,22 +127,22 @@ public class NewUserPage extends AppCompatActivity {
 //    }
 
     public void dietPage(View view){
-        Intent i = new Intent(NewUserPage.this, DietaryPage.class);
+        Intent i = new Intent(UserSettingsPage.this, DietaryPage.class);
         startActivity(i);
     }
 
     public void locationPage(View view) {
-        Intent i = new Intent(NewUserPage.this, GettingStartedPage.class);
+        Intent i = new Intent(UserSettingsPage.this, GettingStartedPage.class);
         startActivity(i);
     }
 
     public void relationshipPage(View view) {
-        Intent i = new Intent(NewUserPage.this, Relationship.class);
+        Intent i = new Intent(UserSettingsPage.this, Relationship.class);
         startActivity(i);
     }
 
     public void goToFood(View view) {
-        Intent i = new Intent(NewUserPage.this, MainActivity.class);
+        Intent i = new Intent(UserSettingsPage.this, MainActivity.class);
         startActivity(i);
     }
 }

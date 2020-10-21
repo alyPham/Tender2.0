@@ -30,7 +30,7 @@ public class MatchDisplay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                Intent openMainActivity = new Intent(MatchDisplay.this, NewUserPage.class);
+                Intent openMainActivity = new Intent(MatchDisplay.this, UserSettingsPage.class);
                 startActivity(openMainActivity);
             }
         }

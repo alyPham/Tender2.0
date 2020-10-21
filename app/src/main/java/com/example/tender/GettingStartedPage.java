@@ -55,7 +55,7 @@ public class GettingStartedPage extends AppCompatActivity {
 
 
     public void goBack(View view) {
-        Intent i = new Intent(GettingStartedPage.this, NewUserPage.class);
+        Intent i = new Intent(GettingStartedPage.this, UserSettingsPage.class);
         startActivity(i);
     }
 

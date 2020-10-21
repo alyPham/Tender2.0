@@ -1,6 +1,5 @@
 package com.example.tender;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,23 +8,17 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.service.autofill.FieldClassification;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
@@ -226,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goBackHome(View view){
-        Intent i = new Intent(MainActivity.this, NewUserPage.class);
+        Intent i = new Intent(MainActivity.this, UserSettingsPage.class);
         startActivity(i);
         System.out.println("---------------------------Disliked dishes: " + dislikedDishes);
     }

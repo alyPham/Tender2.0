@@ -1,7 +1,6 @@
 package com.example.tender;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -153,7 +152,7 @@ public class DietaryPage extends AppCompatActivity {
     }
 
     public void goBack(View view) {
-        Intent i = new Intent(DietaryPage.this, NewUserPage.class);
+        Intent i = new Intent(DietaryPage.this, UserSettingsPage.class);
         startActivity(i);
     }
 
