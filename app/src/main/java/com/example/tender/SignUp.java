@@ -38,39 +38,44 @@ public class SignUp extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.password);
         mProgressbar = (ProgressBar) findViewById(R.id.progressbar_signup);
 
-//      If user click register, add the new user in fire base. If not, print out an error message
+        /**
+         * If the user press Regiter button, update the id and password to Firebase Authentication,
+         * then add & update user info into the realtime database.
+         */
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String email = mEmail.getText().toString().trim();
                 final String password = mPassword.getText().toString().trim();
 
-                if (email.isEmpty()){
+                if (email.isEmpty()){ //Check whether a user provided email
                     mEmail.setError("Email is required");
                     mEmail.requestFocus();
                     return;
                 }
 
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){ //Check whether email is in valid form
                     mEmail.setError("Please provide valid a email address");
                     mEmail.requestFocus();
                     return;
                 }
 
-                if (password.isEmpty()){
+                if (password.isEmpty()){ //Check whether a user provided password
                     mPassword.setError("Password is required");
                     mPassword.requestFocus();
                     return;
                 }
 
-                if (password.length() < 6){
+                if (password.length() < 6){ //Minimum characters for Firebase password are 6
                     mPassword.setError("At least 6 characters required");
                     mPassword.requestFocus();
                     return;
                 }
 
-                mProgressbar.setVisibility(View.VISIBLE);
+                mProgressbar.setVisibility(View.VISIBLE); //Progressbar is shown while the app is registering user into Firebase
 
+                // This method creates a user account based on the email address and password
+                // Then it saves the email and password in UserInfo class which is used to update Realtime Database
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -80,6 +85,8 @@ public class SignUp extends AppCompatActivity {
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                                // This method allows the app to move to new user page after the registration is complete
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
