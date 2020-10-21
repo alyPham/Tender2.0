@@ -13,12 +13,13 @@ Tender is a food-based application that parodies the famous online dating servic
   - Each swipe will take you to a new dish profile aftwerwards.
   - Profiles that you have swiped right to will automatically be saved in your matches page. You can access your match page any time while viewing dish profiles by clicking on the the bottom right button.
 #  Project Status
-- **Active** (we will probably uninstall Android Studio after the final though...)
+- **Active** (until after the final probably)
 - **Features we would have liked to implement:**
   - Usage of an API to better collect dish/restaurant information (unable to fully account for all dietary restrictions such as nut/fish allergies because of lack of reporting by restaurants)
   - Location as a user preference option (i.e find "matches" within a certain distance range)
   - Ability to log-out
   - Match animation rather than toast message
+  - Ability to sort dishes using Firebase rather than hard-coding the dish information
 # Contributing
 - Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 
 - **IMPORTANT NOTE:** All dish/restaurant information was curated by hand and stored in Firebase. Cloud Firestore and Realtime Database were also utilized in the creation of this application to store and access user preferences to better curate what dish profiles were to be viewable. 
