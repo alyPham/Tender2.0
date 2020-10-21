@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     DietaryPage dietaryPage;
 
     Random rand;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         foodProfileFragment = new FoodProfileFragment();
 
         fragmentManager = getSupportFragmentManager();
@@ -108,16 +109,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void editDietaryRestrictions(){
         for (Dish dish:generalDishes){
-            if (dietaryPage.getPrefs.getBoolean("vegetarian", true)){
+            if (dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+                    getInstance().getCurrentUser()).getUid()) + ":vegetarian", true)){
                 deleteNonVegetarian(dish);
             }
-            if (dietaryPage.getPrefs.getBoolean("vegan", true)){
+            if (dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+                    getInstance().getCurrentUser()).getUid()) + ":vegan", true)){
                 deleteNonVegan(dish);
             }
-            if(dietaryPage.getPrefs.getBoolean("dairy", true)){
+            if(dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+                    getInstance().getCurrentUser()).getUid()) + ":dairy", true)){
                 deleteDairy(dish);
             }
-            if(dietaryPage.getPrefs.getBoolean("gluten", true)){
+            if(dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+                    getInstance().getCurrentUser()).getUid()) + ":gluten", true)){
                 deleteGluten(dish);
             }
         }
