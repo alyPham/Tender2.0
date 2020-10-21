@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.service.autofill.FieldClassification;
 import android.view.MotionEvent;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton matchButton;
 
     DietaryPage dietaryPage;
+    SharedPreferences sharedPref;
 
     Random rand;
     private DatabaseReference mDatabase;
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         dislikedDishes = new ArrayList<>();
 
         dietaryPage = new DietaryPage();
+        sharedPref =getSharedPreferences("preferences", MODE_PRIVATE);
         rand = new Random();
         
 
@@ -109,22 +112,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void editDietaryRestrictions(){
         for (Dish dish:generalDishes){
-            if (dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+            if (sharedPref.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
                     getInstance().getCurrentUser()).getUid()) + ":vegetarian", true)){
                 deleteNonVegetarian(dish);
             }
-            if (dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
-                    getInstance().getCurrentUser()).getUid()) + ":vegan", true)){
-                deleteNonVegan(dish);
-            }
-            if(dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
-                    getInstance().getCurrentUser()).getUid()) + ":dairy", true)){
-                deleteDairy(dish);
-            }
-            if(dietaryPage.getPrefs.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
-                    getInstance().getCurrentUser()).getUid()) + ":gluten", true)){
-                deleteGluten(dish);
-            }
+//            if (sharedPref.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+//                    getInstance().getCurrentUser()).getUid()) + ":vegan", true)){
+//                deleteNonVegan(dish);
+//            }
+//            if(sharedPref.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+//                    getInstance().getCurrentUser()).getUid()) + ":dairy", true)){
+//                deleteDairy(dish);
+//            }
+//            if(sharedPref.getBoolean(mDatabase.child("profile").child(Objects.requireNonNull(FirebaseAuth.
+//                    getInstance().getCurrentUser()).getUid()) + ":gluten", true)){
+//                deleteGluten(dish);
+//            }
         }
     }
 
