@@ -39,8 +39,8 @@ public class MatchDisplay extends AppCompatActivity {
     }
 
     public void goBack(View view){
-        Intent i = new Intent(MatchDisplay.this, MainActivity.class);
-        startActivity(i);
+//        Intent i = new Intent(MatchDisplay.this, MainActivity.class);
+        finish();
 
     }
 

@@ -68,16 +68,15 @@ public class DishManager {
                         restaurant.setDaysAndHours(hours);
                         dish.setRestaurant(restaurant);
                         dish.setPriceAndDistance("$" + snapshot.get("price").toString() + " | " + distance);
-
                     }
                     dish.setBlurb(snapshot.get("blurb").toString());
                     dish.setGlutenFree(snapshot.get("gf").toString());
                     dish.setDairyFree(snapshot.get("df").toString());
                     dish.setVegetarian(snapshot.get("v").toString());
                     dish.setVegan(snapshot.get("vg").toString());
-                    System.out.println("-----------------------Dish Name: " + dish.getName());
+//                    System.out.println("-----------------------Dish Name: " + dish.getName());
                     String ref = "public/" + dish.getName() + ".png";
-                    System.out.println("------------------------reference: " + ref);
+//                    System.out.println("------------------------reference: " + ref);
                     storageReference = FirebaseStorage.getInstance().getReference().child(ref);
 
                     setDishImage(dish, storageReference);

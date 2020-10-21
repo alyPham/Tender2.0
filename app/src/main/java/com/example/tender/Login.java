@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            Intent intent = new Intent(Login.this, NewUserPage.class);
                             startActivity(intent);
                             mProgressbar.setVisibility(View.GONE);
                             finish();
