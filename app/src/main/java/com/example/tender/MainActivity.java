@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     DishManager dishManager;
     RestaurantManager restaurantManager;
     List<Dish> generalDishes;
-    List<Dish> likedDishes;
+    String[] likedDishes;
     List<Dish> dislikedDishes;
     List<Dish> customizedDishes;
     Dish currentDish;
@@ -71,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     StorageReference storageReference;
     FirebaseFirestore db;
+
+    TextView dish1, dish2, dish3, dish4;
+    int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +98,17 @@ public class MainActivity extends AppCompatActivity {
         dishManager = new DishManager();
         restaurantManager = new RestaurantManager();
         generalDishes = new ArrayList<>();
-        likedDishes = new ArrayList<>();
+        likedDishes = new String[4];
         dislikedDishes = new ArrayList<>();
 
         dietaryPage = new DietaryPage();
         sharedPref =getSharedPreferences("preferences", MODE_PRIVATE);
         rand = new Random();
+
+        dish1 = findViewById(R.id.Dish1);
+        dish2 = findViewById(R.id.Dish2);
+        dish3 = findViewById(R.id.Dish3);
+        dish4 = findViewById(R.id.Dish4);
 
         editDietaryRestrictions();
         System.out.println(sharedPref);
@@ -404,20 +413,40 @@ public class MainActivity extends AppCompatActivity {
      * and starts the MatchDisplay activity.
      */
     public void onSwipeRight(){
-        likedDishes.add(currentDish);
+
+        likedDishes[counter] = currentDish.getName();
+        counter++;
+//        String temp = currentDish.getName();
+//        if(counter == 1){
+//            dish1.setText(temp);
+//        }
+//        if(counter == 2){
+//            dish2.setText(temp);
+//        }
+//        if(counter == 3){
+//            dish3.setText(temp);
+//        }
+//        if(counter == 4){
+//            dish4.setText(temp);
+//            counter = 0;
+//        }
         updateCurrentDish();
         Toast.makeText(this, "MATCH!", Toast.LENGTH_SHORT).show();
-
         passCurrentDishProfile(foodProfileFragment);
     }
 
-    public String getLikedDishes(){
-        StringBuilder str = new StringBuilder();
-        for (Dish dish: likedDishes){
-            str.append(dish.getName());
-        }
-        return str.toString();
-    }
+//    public String getLikedDishes(){
+//        StringBuilder str = new StringBuilder();
+//        for (Dish dish: likedDishes){
+//            str.append(dish.getName());
+//        }
+//        return str.toString();
+//    }
+
+//    public List<Dish> getLikedDishes(){
+//        return likedDishes;
+//    }
+
 
     /**
      * add currentDish to dislikedDishes list, updates a random currentDish,
@@ -437,11 +466,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToMatch(View view){
         Intent i = new Intent(MainActivity.this, MatchDisplay.class);
-        StringBuilder str = new StringBuilder();
-        for (Dish dish: likedDishes){
 
-            str.append("dish" + i + dish.getName());
-        }
+        i.putExtra("key", likedDishes);
+
+//        StringBuilder str = new StringBuilder();
+//        for (Dish dish: likedDishes){
+//
+//            str.append("dish" + i + dish.getName());
+//        }
         startActivity(i);
     }
 }
