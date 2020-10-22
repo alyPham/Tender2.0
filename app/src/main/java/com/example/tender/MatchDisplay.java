@@ -1,5 +1,7 @@
 package com.example.tender;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MatchDisplay extends AppCompatActivity {
 
@@ -25,6 +31,7 @@ public class MatchDisplay extends AppCompatActivity {
     ImageView image1, image2, image3, image4;
     int counter = 0;
     String[] dishNames;
+    Map<String, String> map;
 
 
     @Override
@@ -49,6 +56,24 @@ public class MatchDisplay extends AppCompatActivity {
         image3 = findViewById(R.id.dishImage3);
         image4 = findViewById(R.id.dishImage4);
 
+        map = new HashMap<>();
+        map.put("Avocado Toast", "resized_avocado_toast");
+        map.put("Bacon Cheese", "resized_bacon_cheese");
+        map.put("Blueberry Corn Pancake", "resized_blueberry_corn_pancake");
+        map.put("Cookies and Cream Milkshake", "resized_cookies_and_cream_milkshake");
+        map.put("Egg & Bacon Croissant", "resized_egg_and_bacon_croissant");
+        map.put("Fish & Chips", "resized_fish_and_chips");
+        map.put("Fish and Ginger Congee", "resized_fish_and_ginger_congee");
+        map.put("Grilled Cheese", "resized_grilled_cheese");
+        map.put("House Fried Rice", "resized_house_fried_rice");
+        map.put("Lobster & Avocado Toast", "resized_lobster_and_avocado_toast");
+        map.put("Mac & Cheese", "resized_mac_and_cheese");
+        map.put("Onion Rings", "resized_onion_rings");
+        map.put("Rare Beef Pho", "resized_rare_beef_pho");
+        map.put("Shrimp Drunken Noodles", "resized_shrimp_drunken_noodles");
+        map.put("Spring Roll", "resized_spring_roll");
+
+
         setText();
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +94,7 @@ public class MatchDisplay extends AppCompatActivity {
             if (counter == 1) {
                 dish1.setText(dish);
                 Resources res = getResources();
-                String mDrawableName = "Resized " + dish;
+                String mDrawableName = map.get(dish);
                 int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
                 Drawable drawable = res.getDrawable(resID );
                 image1.setImageDrawable(drawable);
@@ -77,7 +102,7 @@ public class MatchDisplay extends AppCompatActivity {
             if (counter == 2) {
                 dish2.setText(dish);
                 Resources res = getResources();
-                String mDrawableName = "Resized " + dish;
+                String mDrawableName = map.get(dish);
                 int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
                 Drawable drawable = res.getDrawable(resID );
                 image2.setImageDrawable(drawable);
@@ -85,7 +110,7 @@ public class MatchDisplay extends AppCompatActivity {
             if (counter == 3) {
                 dish3.setText(dish);
                 Resources res = getResources();
-                String mDrawableName = "Resized " + dish;
+                String mDrawableName = map.get(dish);
                 int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
                 Drawable drawable = res.getDrawable(resID );
                 image3.setImageDrawable(drawable);
@@ -93,7 +118,7 @@ public class MatchDisplay extends AppCompatActivity {
             if (counter == 4) {
                 dish4.setText(dish);
                 Resources res = getResources();
-                String mDrawableName = "Resized " + dish;
+                String mDrawableName = map.get(dish);
                 int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
                 Drawable drawable = res.getDrawable(resID );
                 image4.setImageDrawable(drawable);

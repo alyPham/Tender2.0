@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
     List<Dish> generalDishes;
     String[] likedDishes;
     List<Dish> dislikedDishes;
-    List<Dish> customizedDishes;
     Dish currentDish;
+
 
     FragmentManager fragmentManager;
     FoodProfileFragment foodProfileFragment;
