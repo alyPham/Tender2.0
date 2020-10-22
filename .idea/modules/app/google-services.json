@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "781114386470",
+    "firebase_url": "https://tender2-74c0e.firebaseio.com",
+    "project_id": "tender2-74c0e",
+    "storage_bucket": "tender2-74c0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781114386470:android:bfd2181a0b513de036dee7",
+        "android_client_info": {
+          "package_name": "com.example.tender_screen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781114386470-e36oe8ees4qjo8gttttqfd53eit9ek25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tender_screen",
+            "certificate_hash": "2a96f0321964410bef4b9ef35fe0b440d7b7ebba"
+          }
+        },
+        {
+          "client_id": "781114386470-36sbrvua4o3dmthtbhqf8662kltrgivf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNj0dfhcrLOBN8FbLh_Fn80DJmEHOfqXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781114386470-36sbrvua4o3dmthtbhqf8662kltrgivf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,7 +18,7 @@ Tender is a food-based application that parodies the famous online dating servic
   - Usage of an API to better collect dish/restaurant information (unable to fully account for all dietary restrictions such as nut/fish allergies because of lack of reporting by restaurants)
   - Location as a user preference option (i.e find "matches" within a certain distance range)
   - Ability to log-out and reset password
-  - Allow users to select the type of foods, so that the food suggestion could incorporate their cravings
+  - Allow users to select the type of foods so that the food suggestion could incorporate their cravings
   - Match animation rather than toast message
   - Ability to sort dishes using Firebase rather than hard-coding the dish information
 # Contributing
