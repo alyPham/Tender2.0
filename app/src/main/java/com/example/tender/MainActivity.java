@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private String v, vg, gf, df, hookUp, longTerm;
     private UserInfo currentUserInfo;
     DishManager dishManager;
-    RestaurantManager restaurantManager;
     List<Dish> generalDishes;
     String[] likedDishes;
     List<Dish> matchDishList;
@@ -92,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
         matchButton = findViewById(R.id.matchbutton);
 
         dishManager = new DishManager();
-        restaurantManager = new RestaurantManager();
         generalDishes = new ArrayList<>();
         likedDishes = new String[4];
         matchDishList = new ArrayList<>();

@@ -30,6 +30,11 @@ public class DishManager {
         dishes = new ArrayList<>();
     }
 
+    /**
+     * gets a list of dish objects from firebase
+     * @param function
+     * @return
+     */
     public List<Dish> getDishes(final Function<List<Dish>, Void> function){
 
         db.collection("Dish").addSnapshotListener(new EventListener<QuerySnapshot>() {
