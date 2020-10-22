@@ -26,6 +26,27 @@ import java.util.function.Function;
 
 
 public class UserSettingsPage extends AppCompatActivity {
+    private DatabaseReference mDatabase;
+    private UserInfo currentUserInfo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.page_new_user);
+        currentUserInfo = new UserInfo();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        try {
+//            retrieveUserData((l)->{
+//    //            System.out.println(l.getV());
+//    //            if (currentUserInfo.getV() != null) {
+//    //                System.out.println("--------------------------v " + v);
+//    //            }
+//                return null;
+//            });
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
 
     public void dietPage(View view){
         Intent i = new Intent(UserSettingsPage.this, DietaryPage.class);

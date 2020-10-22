@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     RestaurantManager restaurantManager;
     List<Dish> generalDishes;
     String[] likedDishes;
+    List<Dish> matchDishList;
     List<Dish> dislikedDishes;
     Dish currentDish;
 
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         restaurantManager = new RestaurantManager();
         generalDishes = new ArrayList<>();
         likedDishes = new String[4];
+        matchDishList = new ArrayList<>();
         dislikedDishes = new ArrayList<>();
 
         rand = new Random();
@@ -157,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void updateCurrentDish(){
         int randomNum = rand.nextInt(generalDishes.size());
-        while (dislikedDishes.contains(generalDishes.get(randomNum))) {
+        if (dislikedDishes.contains(generalDishes.get(randomNum)) && matchDishList.contains(generalDishes.get(randomNum))) {
             randomNum = rand.nextInt(generalDishes.size());
         }
         currentDish = generalDishes.get(randomNum);
@@ -170,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
     public void onSwipeRight(){
 
         likedDishes[counter] = currentDish.getName();
+        matchDishList.add(currentDish);
         counter++;
         if(counter == 3){
             counter = 0;
