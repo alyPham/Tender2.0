@@ -69,7 +69,7 @@ public class GettingStartedPage extends AppCompatActivity {
     public void addExplanations() {
         explanationList.add("Dish and corresponding restaurant information.");
         explanationList.add("Click to return to home screen/user settings.");
-        explanationList.add("Click to view all dishes you've matched with.");
+        explanationList.add("Click to view all dishes you've matched with.\n Caution! You can only swipe 4 dishes!");
         explanationList.add("Swipe left to dislike, swipe right to like.");
     }
 
