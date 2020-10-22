@@ -73,7 +73,6 @@ public class MatchDisplay extends AppCompatActivity {
         map.put("Shrimp Drunken Noodles", "resized_shrimp_drunken_noodles");
         map.put("Spring Roll", "resized_spring_roll");
 
-
         setText();
 
         home.setOnClickListener(new View.OnClickListener() {
