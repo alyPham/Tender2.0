@@ -1,7 +1,9 @@
 package com.example.tender;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +24,8 @@ import android.widget.TextView;
 
 public class FoodProfileFragment extends Fragment {
     private Dish currentDish;
+    private String websiteUri;
+    private String phoneNum;
 
     private ImageView imageView;
     private TextView dishName;
@@ -30,6 +36,8 @@ public class FoodProfileFragment extends Fragment {
     private TextView dineIn;
     private TextView takeOut;
     private TextView delivery;
+    private ImageButton website;
+    private ImageButton phone;
 
 
     @Override
@@ -38,6 +46,7 @@ public class FoodProfileFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null){
             currentDish = bundle.getParcelable("currentDish");
+
         }
     }
 
@@ -54,6 +63,28 @@ public class FoodProfileFragment extends Fragment {
         dineIn = view.findViewById(R.id.dine_in_option);
         takeOut = view.findViewById(R.id.take_out_option);
         delivery = view.findViewById(R.id.delivery_option);
+        website = view.findViewById(R.id.website_button);
+        phone = view.findViewById(R.id.phone_button);
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(websiteUri));
+                startActivity(intent);
+            }
+        });
+
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:"+phoneNum));
+                startActivity(callIntent);
+            }
+        });
+
         // Inflate the layout for this fragment
         return view;
     }
@@ -63,6 +94,8 @@ public class FoodProfileFragment extends Fragment {
         super.setArguments(args);
         if (args != null){
             currentDish = args.getParcelable("currentDish");
+            websiteUri = currentDish.getRestaurant().getWebsite();
+            phoneNum = currentDish.getRestaurant().getPhoneNum();
             setFoodProfile();
         }
     }
