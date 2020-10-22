@@ -15,7 +15,6 @@ public class UserInfo implements Parcelable {
      * that goes to realtime database in Firebase
      */
     public UserInfo(){
-
     }
 
     public UserInfo(String email, String password){
