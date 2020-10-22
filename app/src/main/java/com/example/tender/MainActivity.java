@@ -105,11 +105,6 @@ public class MainActivity extends AppCompatActivity {
         sharedPref =getSharedPreferences("preferences", MODE_PRIVATE);
         rand = new Random();
 
-        dish1 = findViewById(R.id.Dish1);
-        dish2 = findViewById(R.id.Dish2);
-        dish3 = findViewById(R.id.Dish3);
-        dish4 = findViewById(R.id.Dish4);
-
         editDietaryRestrictions();
         System.out.println(sharedPref);
 
@@ -416,37 +411,13 @@ public class MainActivity extends AppCompatActivity {
 
         likedDishes[counter] = currentDish.getName();
         counter++;
-//        String temp = currentDish.getName();
-//        if(counter == 1){
-//            dish1.setText(temp);
-//        }
-//        if(counter == 2){
-//            dish2.setText(temp);
-//        }
-//        if(counter == 3){
-//            dish3.setText(temp);
-//        }
-//        if(counter == 4){
-//            dish4.setText(temp);
-//            counter = 0;
-//        }
+        if(counter == 3){
+            counter = 0;
+        }
         updateCurrentDish();
         Toast.makeText(this, "MATCH!", Toast.LENGTH_SHORT).show();
         passCurrentDishProfile(foodProfileFragment);
     }
-
-//    public String getLikedDishes(){
-//        StringBuilder str = new StringBuilder();
-//        for (Dish dish: likedDishes){
-//            str.append(dish.getName());
-//        }
-//        return str.toString();
-//    }
-
-//    public List<Dish> getLikedDishes(){
-//        return likedDishes;
-//    }
-
 
     /**
      * add currentDish to dislikedDishes list, updates a random currentDish,
@@ -469,11 +440,6 @@ public class MainActivity extends AppCompatActivity {
 
         i.putExtra("key", likedDishes);
 
-//        StringBuilder str = new StringBuilder();
-//        for (Dish dish: likedDishes){
-//
-//            str.append("dish" + i + dish.getName());
-//        }
         startActivity(i);
     }
 }
