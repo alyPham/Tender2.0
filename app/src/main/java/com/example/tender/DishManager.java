@@ -27,10 +27,6 @@ public class DishManager {
         db = FirebaseFirestore.getInstance();
         StorageReference url = FirebaseStorage.getInstance().
                 getReferenceFromUrl("gs://tender2-74c0e.appspot.com/test_alex/Cookie and Cream Milkshake.jpg");
-//        storageReference = FirebaseStorage.getInstance().getReference()
-//                .child("test_alex/Avocado Toast.jpg");
-//        storageReference = FirebaseStorage.getInstance().getReference().child("test_alex");
-
         dishes = new ArrayList<>();
     }
 
@@ -89,10 +85,6 @@ public class DishManager {
             }
         });
         return dishes;
-    }
-
-    public void writeDishIntoFile(File file){
-
     }
 
     public void setDishImage(final Dish dish, StorageReference storageReference) {

@@ -54,8 +54,6 @@ public class FoodProfileFragment extends Fragment {
         dineIn = view.findViewById(R.id.dine_in_option);
         takeOut = view.findViewById(R.id.take_out_option);
         delivery = view.findViewById(R.id.delivery_option);
-
-
         // Inflate the layout for this fragment
         return view;
     }
@@ -70,7 +68,7 @@ public class FoodProfileFragment extends Fragment {
     }
 
     /**
-     * Displays the currentDish onto the screen. calls all the view objects and sets its
+     * Displays the currentDish onto the screen. Calls all the view objects and sets its
      * content corresponding to currentDish.
      */
     public void setFoodProfile(){

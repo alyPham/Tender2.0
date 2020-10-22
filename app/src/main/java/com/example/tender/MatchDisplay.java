@@ -87,6 +87,9 @@ public class MatchDisplay extends AppCompatActivity {
 
     }
 
+    /**
+     * Shows the dishes the user matched with (image and name only).
+     */
     public void setText() {
         for (String dish : dishNames) {
             if (dish != null) {
@@ -117,11 +120,8 @@ public class MatchDisplay extends AppCompatActivity {
     }
 
     public void goBack(View view){
-//        Intent i = new Intent(MatchDisplay.this, MainActivity.class);
+        Intent i = new Intent(MatchDisplay.this, MainActivity.class);
         finish();
-
     }
 
-    public void displayDish(Dish dish) {
-    }
 }
