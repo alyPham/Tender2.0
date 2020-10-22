@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         likedDishes[counter] = currentDish.getName();
         matchDishList.add(currentDish);
         counter++;
-        if(counter == 3){
+        if(counter == 4){
             counter = 0;
         }
         updateCurrentDish();

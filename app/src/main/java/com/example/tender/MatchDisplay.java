@@ -83,26 +83,29 @@ public class MatchDisplay extends AppCompatActivity {
     public void setText() {
         for (String dish : dishNames) {
             if (dish != null) {
-                counter++;
-                if (counter == 1) {
+                if (counter == 0) {
                     dish1.setText(dish);
                     int id = map.get(dish);
                     image1.setImageResource(id);
+                    counter++;
                 }
-                if (counter == 2) {
+                else if (counter == 1) {
                     dish2.setText(dish);
                     int id = map.get(dish);
                     image2.setImageResource(id);
+                    counter++;
                 }
-                if (counter == 3) {
+                else if (counter == 2) {
                     dish3.setText(dish);
                     int id = map.get(dish);
                     image3.setImageResource(id);
+                    counter++;
                 }
-                if (counter == 4) {
+                else if (counter == 3) {
                     dish4.setText(dish);
                     int id = map.get(dish);
                     image4.setImageResource(id);
+                    counter = 0;
                 }
             }
         }
