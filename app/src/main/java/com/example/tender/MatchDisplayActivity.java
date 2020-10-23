@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MatchDisplay extends AppCompatActivity {
+public class MatchDisplayActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     ImageButton home;
@@ -69,7 +69,7 @@ public class MatchDisplay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                Intent openMainActivity = new Intent(MatchDisplay.this, UserSettingsPage.class);
+                Intent openMainActivity = new Intent(MatchDisplayActivity.this, UserSettingsPage.class);
                 startActivity(openMainActivity);
             }
         }
@@ -113,7 +113,7 @@ public class MatchDisplay extends AppCompatActivity {
     }
 
     public void goBack(View view){
-        Intent i = new Intent(MatchDisplay.this, MainActivity.class);
+        Intent i = new Intent(MatchDisplayActivity.this, MainActivity.class);
         finish();
     }
 

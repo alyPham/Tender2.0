@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToMatch(View view){
-        Intent i = new Intent(MainActivity.this, MatchDisplay.class);
+        Intent i = new Intent(MainActivity.this, MatchDisplayActivity.class);
         i.putExtra("key", likedDishes); //pass likedDishes so that they can be displayed in match page
         startActivity(i);
     }

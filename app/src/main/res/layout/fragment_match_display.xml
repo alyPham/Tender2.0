@@ -3,6 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="409dp"
     android:layout_height="650dp"
-    tools:context=".MatchDisplay">
+    tools:context=".MatchDisplayActivity">
 
 </FrameLayout>
