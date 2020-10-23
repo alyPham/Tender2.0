@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="432dp"
+        android:layout_width="match_parent"
         android:layout_height="114dp"
         android:background="#F86868"
         android:fontFamily="@font/roboto_bold"
@@ -24,13 +24,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/hero_light_bold"
         android:gravity="center"
-        android:text="Getting Started"
+        android:text="Tutorial"
         android:textColor="#F0FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/tutorial_img"

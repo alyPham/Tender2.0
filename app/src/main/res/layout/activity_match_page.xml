@@ -38,7 +38,7 @@
 
     <ImageView
         android:id="@+id/dishImage1"
-        android:layout_width="416dp"
+        android:layout_width="wrap_content"
         android:layout_height="109dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,18 +49,18 @@
 
     <ImageView
         android:id="@+id/dishImage2"
-        android:layout_width="416dp"
+        android:layout_width="wrap_content"
         android:layout_height="109dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishImage1"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <ImageView
         android:id="@+id/dishImage3"
-        android:layout_width="416dp"
+        android:layout_width="wrap_content"
         android:layout_height="109dp"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +72,7 @@
 
     <ImageView
         android:id="@+id/dishImage4"
-        android:layout_width="416dp"
+        android:layout_width="wrap_content"
         android:layout_height="109dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +83,7 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="432dp"
+        android:layout_width="match_parent"
         android:layout_height="114dp"
         android:background="#F86868"
         android:text=" "
