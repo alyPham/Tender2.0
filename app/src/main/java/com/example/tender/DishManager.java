@@ -11,12 +11,14 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @Author Alex Li
+ * Reads the dish object from firebase and stores that as a list.
+ */
 public class DishManager {
     final long ONE_MEGABYTE = 1024*1024*5;
     FirebaseFirestore db;
@@ -32,8 +34,8 @@ public class DishManager {
 
     /**
      * gets a list of dish objects from firebase
-     * @param function
-     * @return
+     * @param function to apply to each dish object. Help build up lambda expression.
+     * @return the list of unsorted dishes.
      */
     public List<Dish> getDishes(final Function<List<Dish>, Void> function){
 

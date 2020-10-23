@@ -3,6 +3,10 @@ package com.example.tender;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * @Author Alex Li
+ * Stores the restaurant information as strings.
+ */
 public class Restaurant implements Parcelable {
     String name;
     String daysAndHours;

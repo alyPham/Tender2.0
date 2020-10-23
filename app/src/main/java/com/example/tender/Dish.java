@@ -5,6 +5,11 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+/**
+ * @Author Alex Li
+ * Stores dish data as individual strings, the image as a byte array，
+ * and stores the restaurant information as a restaurant object.
+ */
 public class Dish implements Parcelable{
     private byte[] bytes;
     private String name;
