@@ -51,49 +51,50 @@
         app:layout_constraintTop_toBottomOf="@+id/welcome_to_tender"
         app:layout_constraintVertical_bias="0.027" />
 
-    <Button
-        android:id="@+id/diet"
-        android:layout_width="282dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/rounded_button"
-        android:capitalize="characters"
-        android:fontFamily="@font/hero_light_bold"
-        android:onClick="dietPage"
-        android:text="Dietary Restrictions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+    <!--    <Button-->
+    <!--        android:id="@+id/diet"-->
+    <!--        android:layout_width="282dp"-->
+    <!--        android:layout_height="52dp"-->
+    <!--        android:layout_marginTop="36dp"-->
+    <!--        android:background="@drawable/rounded_button"-->
+    <!--        android:capitalize="characters"-->
+    <!--        android:fontFamily="@font/hero_light_bold"-->
+    <!--        android:onClick="dietPage"-->
+    <!--        android:text="Dietary Restrictions"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.496"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tutorial" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/relationship"-->
+    <!--        android:layout_width="282dp"-->
+    <!--        android:layout_height="52dp"-->
+    <!--        android:background="@drawable/rounded_button"-->
+    <!--        android:fontFamily="@font/hero_light_bold"-->
+    <!--        android:onClick="relationshipPage"-->
+    <!--        android:text="Relationship Type"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.519"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/diet"-->
+    <!--        app:layout_constraintVertical_bias="0.156" />-->
 
     <Button
-        android:id="@+id/location"
-        android:layout_width="282dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="308dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/hero_light_bold"
-        android:onClick="locationPage"
-        android:text="Getting Started"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/relationship"
+        android:id="@+id/tutorial_button"
         android:layout_width="282dp"
         android:layout_height="52dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/hero_light_bold"
-        android:onClick="relationshipPage"
-        android:text="Relationship Type"
+        android:onClick="gettingStartedPage"
+        android:text="Tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diet"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintTop_toBottomOf="@+id/how_may_i_serve_you_today"
+        app:layout_constraintVertical_bias="0.276" />
 
     <ImageButton
         android:id="@+id/proceed"
