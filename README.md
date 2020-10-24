@@ -1,5 +1,5 @@
 # Tender2.0
-[TEAM CHERRY] Alex Li, Alyssa Pham, and Jeongyeob Hong
+[TEAM CHERRY] Alex Li, Alyssa Pham, David Jiang and Jeongyeob Hong
 # Description
 Tender is a food-based application that parodies the famous online dating service Tinder<sup>TM</sup>. 
 ## How to Use
